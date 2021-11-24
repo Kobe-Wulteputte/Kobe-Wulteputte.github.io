@@ -1,0 +1,28 @@
+main {
+    margin: 4em auto;
+    max-width: 75%;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 10px;
+}
+
+.collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3em, 1fr));
+    grid-gap: 5px;
+    padding: 20px;
+}
+h2 {
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+.active-week {
+    background-color: orange;
+    padding: 5px;
+}
+
+.non-active-week {
+    background-color: white;
+    padding: 5px;
+}
