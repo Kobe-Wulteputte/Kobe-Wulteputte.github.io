@@ -1,5 +1,7 @@
 import environment from '../config/environment.json';
 import {PLATFORM} from 'aurelia-pal';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export function configure(aurelia) {
   aurelia.use
