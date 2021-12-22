@@ -1,9 +1,9 @@
-import { Post } from "./../../modules/post/post";
+import { PostDTO } from './../../common/models/postDTO';
 import { bindable } from "aurelia-framework";
 
 export class Postcard {
   @bindable
-  post: Post;
+  post: PostDTO;
 
   constructor() {
   }

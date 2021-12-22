@@ -1,14 +1,19 @@
-import { Post } from '../post/post';
-export class Blogposts {
-  posts: Post[];
+import { PostDTO } from './../../common/models/postDTO';
+import { autoinject } from 'aurelia-framework';
+import { PostService } from './../../common/services/post-service';
 
-  constructor() {
-    let testPost = new Post();
-    testPost.postTitle = 'Een nieuwe';
-    this.posts = [testPost, new Post()];
+
+@autoinject
+export class Blogposts {
+  postlist: PostDTO[];
+  postService: PostService;
+
+  constructor(postService: PostService) {
+    this.postService = postService
   }
 
-  activate(){
-
+  activate() {
+    this.postlist = this.postService.postList;
+    this.postlist.sort((a,b) => (a.createdDate < b.createdDate) ? 1 : ((b.createdDate < a.createdDate) ? -1 : 0))
   }
 }

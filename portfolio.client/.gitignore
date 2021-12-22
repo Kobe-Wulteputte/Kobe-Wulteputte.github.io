@@ -34,3 +34,5 @@ node_modules
 /scripts
 /src/environment.ts
 /dist
+
+.npmrc

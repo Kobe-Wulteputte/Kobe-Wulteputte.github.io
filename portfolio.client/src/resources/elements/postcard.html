@@ -19,14 +19,17 @@
       <h3 class="mb-0">${post.postTitle}</h3>
       <div class="mb-1 text-muted">${post.createdDate | dateFormat}</div>
       <p class="mb-auto">${post.short}</p>
-      <a href="#" class="stretched-link">Continue reading</a>
+      <a
+        route-href="route: blogpost; params.bind: {id:post.id}"
+        class="stretched-link"
+      >
+        Continue reading</a>
     </div>
     <div class="col-auto d-none d-lg-block">
       <img
-        class=""
         style="object-fit: cover"
-        width="200"
-        height="250"
+        width="150"
+        height="100%"
         src="${post.thumbnail}"
         alt="thumbnail"
         focusable="false"

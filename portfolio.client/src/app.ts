@@ -30,6 +30,14 @@ export class App {
         nav: true,
         moduleId: "modules/blogposts/blogposts",
       },
+      {
+        route: "post/:id",
+        name: "blogpost",
+        title: "Blog",
+        href: 'blogpost',
+        nav: false,
+        moduleId: "modules/post/post",
+      }
     ]);
     config.fallbackRoute("welcome");
   }

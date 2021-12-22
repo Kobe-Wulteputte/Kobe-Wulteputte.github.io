@@ -1,15 +1,33 @@
-export class Post {
-  postTitle: string;
-  createdDate: Date;
-  short: string;
-  blogType: string; //TODO: enum?
-  thumbnail: string;
+import { PostDTO } from "./../../common/models/postDTO";
+import { autoinject } from "aurelia-framework";
+import { PostService } from "./../../common/services/post-service";
+import { text } from "stream/consumers";
 
-  constructor() {
-    this.postTitle = 'Titel';
-    this.createdDate = new Date();
-    this.short= 'Een korte uitleg';
-    this.blogType= 'Code';
-    this.thumbnail = 'assets/images/07CAT-STRIPES-mediumSquareAt3X-v2.jpg';
+@autoinject
+export class Post {
+  postDTO: PostDTO;
+  postService: PostService;
+  content: string;
+
+  constructor(postService: PostService) {
+    this.postService = postService;
+  }
+
+  activate(params: any) {
+    this.postDTO = this.postService.postList.find(
+      (post) => post.id == params.id
+    );
+    console.log(this.postDTO);
+    // this.content = this.postService.getContent(params.id)
+    this.content = "Content";
+    this.postService
+      .getContent(params.id)
+      .then((content: string) => {
+        this.content = content;
+      })
+      .catch((err) => {
+        console.error(err);
+        this.content = "No content found";
+      });
   }
 }
