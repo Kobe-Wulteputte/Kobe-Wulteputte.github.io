@@ -1,0 +1,30 @@
+<template>
+  <header class="header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="text-center">
+        <a class="header-logo text-dark" href="#">Kobe Wulteputte</a>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mx-5" id="navbarNavAltMarkup">
+        <div class="navbar-nav" repeat.for="row of router.navigation">
+          <a class="nav-link ${row.isActive ? 'active' : ''}" ${row.isActive ? 'aria-current="page"' : ''} href.bind="row.href">${row.title}</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>

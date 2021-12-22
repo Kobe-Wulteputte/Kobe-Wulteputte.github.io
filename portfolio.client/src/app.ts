@@ -1,15 +1,36 @@
-import { autoinject } from 'aurelia-framework';
+import { autoinject } from "aurelia-framework";
+import { RouterConfiguration, Router } from "aurelia-router";
 
 @autoinject
 export class App {
-  public message = 'Hello World!';
+  router: Router;
 
-  constructor(){
-    console.log("Constructed");
+  constructor() {
   }
 
-  activate(){
-    console.log("Activated");
-  }
+  activate() {}
 
+  configureRouter(config: RouterConfiguration, router: Router): void {
+    this.router = router;
+    config.title = "Kobe Wulteputte";
+    config.options.root = "/";
+    config.options.pushState = true;
+    config.map([
+      {
+        route: ["", "welcome"],
+        name: "home",
+        title: "About me",
+        nav: true,
+        moduleId: "modules/about-me/about-me",
+      },
+      {
+        route: ["blog"],
+        name: "blog",
+        title: "Blog",
+        nav: true,
+        moduleId: "modules/blogposts/blogposts",
+      },
+    ]);
+    config.fallbackRoute("welcome");
+  }
 }

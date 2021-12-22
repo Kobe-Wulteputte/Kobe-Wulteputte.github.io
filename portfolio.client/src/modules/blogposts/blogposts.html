@@ -1,0 +1,9 @@
+<template>
+  <require from="resources/elements/postcard"></require>
+
+  <div class="row m-2">
+    <div class="col-xl-4 col-md-6" repeat.for="post of posts">
+      <postcard post.bind="post"></postcard>
+    </div>
+  </div>
+</template>
