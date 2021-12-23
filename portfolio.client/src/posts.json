@@ -4,16 +4,15 @@
       "id": 1,
       "postTitle": "Titel1",
       "createdDate": "2021-11-12T10:41:12.660Z",
-      "short": "Korte beschrijving",
+      "short": "Korte beschrijving, lalalalala",
       "blogType": "Azure",
       "thumbnail": "assets/images/07CAT-STRIPES-mediumSquareAt3X-v2.jpg"
     },
     {
       "id": 2,
-      "postTitle": "Titel2",
+      "postTitle": "Verhaaltje",
       "createdDate": "2021-12-02T10:41:12.660Z",
       "short": "Korte beschrijving van een andere post",
-      "long": "inhoud",
       "blogType": "code",
       "thumbnail": "https://picsum.photos/200/300"
     },
