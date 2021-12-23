@@ -31,7 +31,7 @@ export class PostService {
           statusText: xhr.statusText,
         });
       };
-      
+
       xhr.send();
     });
   }
