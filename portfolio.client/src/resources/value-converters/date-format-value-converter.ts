@@ -1,8 +1,8 @@
-import moment from "moment";
+import {format} from "date-fns";
 
 export class DateFormatValueConverter {
   toView(value) {
-    return moment(value).format("DD/MM/YY");
+    return format(value, "dd/MM/yy");
   }
 
   fromView(value) {

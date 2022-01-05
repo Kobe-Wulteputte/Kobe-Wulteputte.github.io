@@ -2,7 +2,6 @@ import { PostDTO } from './../../common/models/postDTO';
 import { autoinject } from 'aurelia-framework';
 import { PostService } from './../../common/services/post-service';
 
-
 @autoinject
 export class Blogposts {
   postlist: PostDTO[];

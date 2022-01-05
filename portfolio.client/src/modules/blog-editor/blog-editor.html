@@ -1,0 +1,27 @@
+<template>
+  <require from="aurelia-kendoui-bridge/editor/editor"></require>
+
+  <div class="container">
+    <form submit.delegate="handleSubmit($event)">
+    <div class="row">
+
+        <div class="col-md-5">
+          <h2>Post title:</h2>
+          <input value.bind="tempPost.postTitle" />
+        </div>
+        <div class="col-md-5">
+          <input type="submit"></button>
+        </div>
+
+        <div class="col-md-12">
+          <textarea
+          ak-rich-editor="k-widget.bind: editor; k-tools.bind: tools; k-resizable: resizable;"
+          k-on-ready.delegate="editorReady($event.detail)"
+          style="height: 85vh"
+          >
+          </textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</template>

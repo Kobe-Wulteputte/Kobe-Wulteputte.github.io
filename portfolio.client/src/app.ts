@@ -37,7 +37,14 @@ export class App {
         href: 'blogpost',
         nav: false,
         moduleId: "modules/post/post",
-      }
+      },
+      // {
+      //   route: "post/:id/edit",
+      //   name: "blogedit",
+      //   title: "Editor",
+      //   nav: false,
+      //   moduleId: "modules/blog-editor/blog-editor",
+      // }
     ]);
     config.fallbackRoute("welcome");
   }
