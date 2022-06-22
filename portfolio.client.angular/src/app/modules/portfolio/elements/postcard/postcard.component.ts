@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/shared/models/post.model';
 
 @Component({
@@ -7,14 +8,13 @@ import { Post } from 'src/app/shared/models/post.model';
   styleUrls: ['./postcard.component.scss'],
 })
 export class PostcardComponent implements OnInit {
-
   @Input()
   post!: Post; //Je moet blijkbaar expliciet meegeven dat post niet null zal zijn.
   constructor() {}
 
   ngOnInit(): void {
-    if (this.post == null){
-      console.error("Post mag geen NULL zijn");
+    if (this.post == null) {
+      console.error('Post mag geen NULL zijn');
     }
   }
 }

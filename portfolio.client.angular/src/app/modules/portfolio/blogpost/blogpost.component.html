@@ -1,0 +1,5 @@
+<article class="container">
+  <h2>{{ post?.postTitle }}</h2>
+  <p>{{ post?.createdDate | date: "short" }}</p>
+  <div [innerHTML]="content"></div>
+</article>

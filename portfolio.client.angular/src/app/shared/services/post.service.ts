@@ -15,7 +15,7 @@ export class PostService {
     this.postList = loaded;
   }
 
-  async getContent(id: number) {
+  async getContent(id: number): Promise<string> {
     return new Promise(function (resolve, reject) {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', `assets/blogcontents/${id}.html`, true);

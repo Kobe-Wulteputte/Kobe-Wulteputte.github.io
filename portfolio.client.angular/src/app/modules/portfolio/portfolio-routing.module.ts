@@ -2,6 +2,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogsComponent } from './blogs/blogs.component';
+import { BlogpostComponent } from './blogpost/blogpost.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'about-me', pathMatch: 'full' },
@@ -9,13 +10,16 @@ const routes: Routes = [
     path: 'about-me',
     component: AboutMeComponent,
     title: 'About me',
-    data: { nav: true },
   },
   {
     path: 'blog',
     component: BlogsComponent,
     title: 'Blog',
-    data: { nav: true },
+  },
+  {
+    path: 'blogpost/:id',
+    component: BlogpostComponent,
+    title: 'Blogpost',
   },
 ];
 

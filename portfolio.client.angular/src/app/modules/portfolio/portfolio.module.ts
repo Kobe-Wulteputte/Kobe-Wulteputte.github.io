@@ -10,9 +10,10 @@ import {
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons';
+import { BlogpostComponent } from './blogpost/blogpost.component';
 
 @NgModule({
-  declarations: [AboutMeComponent, BlogsComponent, PostcardComponent],
+  declarations: [AboutMeComponent, BlogsComponent, PostcardComponent, BlogpostComponent],
   imports: [CommonModule, PortfolioRoutingModule, FontAwesomeModule],
 })
 export class PortfolioModule {

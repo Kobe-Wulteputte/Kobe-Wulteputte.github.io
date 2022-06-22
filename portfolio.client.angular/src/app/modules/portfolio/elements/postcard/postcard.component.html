@@ -9,7 +9,7 @@
     <div class="mb-1 text-muted">{{ post.createdDate | date: "short" }}</div>
     <p class="mb-auto">{{ post.short }}</p>
     <a
-      route-href="route: blogpost; params.bind: {id:post.id}"
+      [routerLink]="['/blogpost', post.id]"
       class="stretched-link"
     >
       Continue reading</a
