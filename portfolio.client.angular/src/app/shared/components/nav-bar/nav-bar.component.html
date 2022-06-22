@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid mx-3">
     <a class="navbar-brand" href="#"
@@ -16,8 +15,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav" *ngFor="let row of router.config">
-        <a *ngIf="row.data?.['nav']" routerLinkActive="active" class="nav-link" [routerLink]="row.path">{{row.title}}</a>
+      <div class="navbar-nav" *ngFor="let row of routes">
+        <a
+          *ngIf="row.data?.['nav']"
+          routerLinkActive="active"
+          class="nav-link"
+          [routerLink]="row.path"
+          >{{ row.title }}</a
+        >
       </div>
     </div>
   </div>

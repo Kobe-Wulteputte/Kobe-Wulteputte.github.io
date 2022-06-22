@@ -20,10 +20,25 @@
           Frequently praised as hard working by my peers, I can be relied upon
           to help your company achieve its goals.
         </p>
-        <!-- <a href="http://www.google.be" class="me-lg-4 me-2"><font-awesome-icon class="display-6 text-dark" icon.bind="['fab', 'instagram']"></font-awesome-icon></a>
-            <a href="http://www.google.be" class="me-lg-4 me-2"> <font-awesome-icon class="display-6 text-dark" icon.bind="['fab', 'linkedin']"></font-awesome-icon></a>
-            <a href="http://www.google.be" class="me-lg-4 me-2"> <font-awesome-icon class="display-6 text-dark" icon.bind="['fab', 'strava']"></font-awesome-icon></a>
-             -->
+        <!-- Er zijn 2 manieren om font-awesom iconen te importeren:
+          - over heel het project (zie app.module.ts)
+          - enkel in de huidige klasse (voorbeeld instagram)
+        -->
+        <a href="http://www.google.be" class="me-lg-4 me-2"
+          ><fa-icon class="display-6 text-dark" [icon]="faInstagram"></fa-icon
+        ></a>
+        <a href="http://www.google.be" class="me-lg-4 me-2">
+          <fa-icon
+            class="display-6 text-dark"
+            [icon]="['fab', 'linkedin']"
+          ></fa-icon
+        ></a>
+        <a href="http://www.google.be" class="me-lg-4 me-2">
+          <fa-icon
+            class="display-6 text-dark"
+            [icon]="['fab', 'strava']"
+          ></fa-icon
+        ></a>
       </div>
     </div>
   </div>

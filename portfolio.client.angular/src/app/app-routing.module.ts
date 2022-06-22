@@ -1,21 +1,17 @@
-import { AboutMeComponent } from './about-me/about-me.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: 'about-me',
-    component: AboutMeComponent,
-    title: 'About me',
-    data: { nav: true },
+    // Routing van de submodule binnenhalen
+    path: '',
+    loadChildren: () =>
+      import('./modules/portfolio/portfolio.module').then(
+        (m) => m.PortfolioModule
+      ),
   },
-  {
-    path: 'blog',
-    component: AboutMeComponent,
-    title: 'Blog',
-    data: { nav: true },
-  },
-  { path: '', redirectTo: 'about-me', pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

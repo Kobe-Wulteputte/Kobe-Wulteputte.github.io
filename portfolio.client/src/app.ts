@@ -5,8 +5,7 @@ import { RouterConfiguration, Router } from "aurelia-router";
 export class App {
   router: Router;
 
-  constructor() {
-  }
+  constructor() {}
 
   activate() {}
 
@@ -34,7 +33,7 @@ export class App {
         route: "post/:id",
         name: "blogpost",
         title: "Blog",
-        href: 'blogpost',
+        href: "blogpost",
         nav: false,
         moduleId: "modules/post/post",
       },

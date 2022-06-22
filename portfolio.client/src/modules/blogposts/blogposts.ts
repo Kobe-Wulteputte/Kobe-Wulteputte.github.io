@@ -5,9 +5,8 @@ import { PostService } from './../../common/services/post-service';
 @autoinject
 export class Blogposts {
   postlist: PostDTO[];
-  postService: PostService;
 
-  constructor(postService: PostService) {
+  constructor(private postService: PostService) {
     this.postService = postService
   }
 
