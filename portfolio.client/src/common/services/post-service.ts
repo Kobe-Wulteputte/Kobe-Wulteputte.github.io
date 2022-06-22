@@ -13,7 +13,7 @@ export class PostService {
 
   async getContent(id: number) {
     return new Promise(function (resolve, reject) {
-      var xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       xhr.open("GET", `assets/blogcontents/${id}.html`, true);
       xhr.onload = function () {
         if (this.status >= 200 && this.status < 300) {
