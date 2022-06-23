@@ -11,6 +11,11 @@ const routes: Routes = [
         (m) => m.PortfolioModule
       ),
   },
+  {
+    path: 'proof-of-concept',
+    loadChildren: () =>
+      import('./modules/poc/poc.module').then((m) => m.PocModule),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

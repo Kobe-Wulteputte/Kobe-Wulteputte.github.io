@@ -21,6 +21,11 @@ export class NavBarComponent implements OnInit {
       title: 'Blog',
       data: { nav: true },
     },
+    {
+      path: 'proof-of-concept/grid',
+      title: 'Grid',
+      data: { nav: true },
+    },
   ];
 
 
