@@ -1,0 +1,30 @@
+<h1>Bank Sync</h1>
+<h2>What is it?</h2>
+<p>
+  I have always liked keeping track of my expenses. What started out a simple Excel file to keep track of how much i
+  spend on food and drinks has evolved into a full blown money management system. The system makes use of a number of
+  tools to both retreive the data and draw conclusions from it. The goal is to be able to see where my money goes and to
+  be able to make better decisions on how to spend it. All this should be done automatically and without any effort on
+  my part.
+</p>
+<h2>How does it work?</h2>
+<p>The system is based on a number of tools that work together to achieve the goal. The tools are:</p>
+
+<ul>
+  <li>Nordigen, to retreive bank transactions from multiple sources</li>
+  <li>An Azure funtion to call the Nordigen API, process and label the data and finally write the changes to a file</li>
+  <li>
+    A second Azure function to periodically read all past transactions and extract information for labeling new data
+  </li>
+  <li>A Power Bi report to visualise the data</li>
+</ul>
+
+<h2>Technologies used</h2>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="https://github.com/Kobe-Wulteputte/BankSync">Github project</a></li>
+  <li><a href="https://nordigen.com/">Nordigen</a></li>
+  <li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a></li>
+  <li><a href="https://powerbi.microsoft.com/en-us/">Power Bi</a></li>
+</ul>

@@ -1,22 +1,46 @@
-# `portfolio.client`
+# portfolio
 
-This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
+This template should help get you started developing with Vue 3 in Vite.
 
-For more information, go to https://aurelia.io/docs/cli/cli-bundler
+## Recommended IDE Setup
 
-## Run dev app
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-Run `au run`, then open `http://localhost:9000`
+## Type Support for `.vue` Imports in TS
 
-To open browser automatically, do `au run --open`.
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-To change dev server port, do `au run --port 8888`.
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-To change dev server host, do `au run --host 127.0.0.1`
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
+## Customize configuration
 
-**PS:** You could mix all the flags as well, `au run --host 127.0.0.1 --port 7070 --open`
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Build for production
+## Project Setup
 
-Run `au build --env prod`.
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
