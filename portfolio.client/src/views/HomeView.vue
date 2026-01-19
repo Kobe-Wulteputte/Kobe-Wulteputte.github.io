@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <main>
     <div class="container col-xxl-9 py-5">
