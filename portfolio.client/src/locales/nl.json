@@ -18,6 +18,10 @@
         "category": "Categorie",
         "continueReading": "Verder lezen"
     },
+    "blogpage": {
+        "title": "Blogberichten",
+        "description": "Lees mijn nieuwste blogberichten over verschillende onderwerpen, waaronder technologie, programmeren en softwareontwikkeling."
+    },
     "common": {
         "profilePicture": "Profielfoto"
     }

@@ -6,9 +6,9 @@ import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
 import I18NextVue from 'i18next-vue'
+import { useLanguageStore } from './stores/LanguageStore'
 
 import './styles/style.scss'
-import FontAwesomeIcon from './utilities/fontawesome-icons'
 import { highlightDirective } from './utilities/custom-directive'
 import { registerFontawesomeComponent } from './plugins/font-awesome'
 
@@ -21,6 +21,8 @@ registerFontawesomeComponent(app)
 
 app.directive('highlight', highlightDirective)
 
-app.component('font-awesome-icon', FontAwesomeIcon)
+// Initialize language from localStorage
+const languageStore = useLanguageStore()
+languageStore.initializeLanguage()
 
 app.mount('#app')

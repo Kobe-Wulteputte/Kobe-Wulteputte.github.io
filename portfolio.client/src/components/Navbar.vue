@@ -3,16 +3,18 @@ import { useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
 import { useTranslation } from "i18next-vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { useLanguageStore } from "@/stores/LanguageStore";
 
 const tr = useTranslation();
 const router = useRouter();
 const currentRoute = useRoute();
 const isMenuOpen = ref(false);
+const langStore = useLanguageStore();
 
 const routes = router.getRoutes().filter((e) => e.meta.nav);
 
 function changeLanguage(lang: string) {
-  tr.i18next.changeLanguage(lang);
+  langStore.setLanguage(lang);
 }
 </script>
 

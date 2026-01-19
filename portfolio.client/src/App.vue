@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { provide, ref } from "vue";
+import { provide, ref, onMounted } from "vue";
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
-import { userKey } from "./utilities/injection-keys";
-import type User from "./models/User";
+import { useBlogStore } from "./stores/BlogStore";
 
-const activeUser = ref<User>({
-  id: 1,
-  name: "Kobe",
-  settings: []
-})
 
-provide(userKey, activeUser.value);
+
+
+// Preload all blog posts in the background
+const blogStore = useBlogStore();
+onMounted(() => {
+  blogStore.preloadAllPosts();
+});
 </script>
 
 <template>

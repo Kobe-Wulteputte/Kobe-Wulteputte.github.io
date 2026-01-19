@@ -18,6 +18,10 @@
         "category": "Category",
         "continueReading": "Continue reading"
     },
+    "blogpage": {
+        "title": "Blog Posts",
+        "description": "Read my latest blog posts about various topics including technology, programming, and software development."
+    },
     "common": {
         "profilePicture": "Profile picture"
     }

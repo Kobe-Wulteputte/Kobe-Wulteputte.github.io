@@ -1,20 +1,28 @@
 <script setup lang="ts">
 import { userKey } from '@/utilities/injection-keys';
-import { inject, onMounted, ref, type DirectiveBinding } from 'vue';
+import { useTranslation } from 'i18next-vue';
+import { inject, computed, type DirectiveBinding } from 'vue';
+import { useBlogStore } from '@/stores/BlogStore';
 
 const props = defineProps<{
     id: string;
 }>();
-const el = ref<HTMLInputElement | null>(null)
-const user = inject(userKey);
+const tr = useTranslation();
+const blogStore = useBlogStore();
 
-onMounted(() => {
-    el.value?.focus();
+const currentLang = computed(() => {
+    const lang = tr.i18next.language || 'en';
+    return lang.startsWith('nl') ? 'nl' : 'en';
 });
 
-function vColor(el: HTMLElement, binding: DirectiveBinding) {
-    el.style.color = binding.value;
-}
+const postMetaData = computed(() => blogStore.getPost(props.id));
+const postContent = computed(() => blogStore.getPostContent(props.id, currentLang.value));
+
+
+
+
+
+
 </script>
 
 <template>
@@ -22,11 +30,10 @@ function vColor(el: HTMLElement, binding: DirectiveBinding) {
         <div class="container py-3xl">
             <article class="blog-post">
                 <header class="blog-post-header">
-                    <h1 class="blog-post-title">Blog post {{ id }}</h1>
-                    <p class="blog-post-meta">By {{ user?.name || "Anonymous" }}</p>
+                    <h1 class="blog-post-title">{{ postMetaData?.postTitle || "Blog post" }}</h1>
+                    <p class="blog-post-meta">{{ postMetaData?.createdDate?.toLocaleDateString() || "" }}</p>
                 </header>
-                <div class="blog-post-content">
-                    <input ref="el" v-highlight class="blog-post-input" />
+                <div class="blog-post-content" v-html="postContent">
                 </div>
             </article>
         </div>
@@ -70,15 +77,100 @@ function vColor(el: HTMLElement, binding: DirectiveBinding) {
     opacity: 0;
 }
 
-.blog-post-input {
-    width: 100%;
-    padding: var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-md);
-    font-family: var(--font-family-base);
-    font-size: 1rem;
-    transition: all var(--transition-normal);
+/* Markdown content styling */
+.blog-post-content :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-primary);
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.3;
 }
+.blog-post-content h1 { font-size: 2rem; }
+.blog-post-content h2 { font-size: 1.75rem; }
+.blog-post-content h3 { font-size: 1.5rem; }
+.blog-post-content h4 { font-size: 1.25rem; }
+.blog-post-content h5 { font-size: 1.125rem; }
+.blog-post-content h6 { font-size: 1rem; }
+
+.blog-post-content p {
+    margin: 1rem 0;
+}
+
+.blog-post-content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.blog-post-content a:hover {
+    color: var(--color-accent-hover);
+}
+
+.blog-post-content img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.blog-post-content .aside-image {
+    float: right;
+    width: 300px;
+    margin: 0 0 1rem 1.5rem;
+}
+
+.blog-post-content .aside-image img {
+    width: 100%;
+    margin: 0;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+.blog-post-content li { margin: 0.25rem 0; }
+
+.blog-post-content blockquote {
+    border-left: 3px solid var(--color-border);
+    padding-left: 1rem;
+    color: var(--color-tertiary);
+    margin: 1rem 0;
+}
+
+.blog-post-content code {
+    background: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.15rem 0.35rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95em;
+}
+
+.blog-post-content pre {
+    background: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    overflow: auto;
+    box-shadow: var(--shadow-xs);
+}
+.blog-post-content pre code {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.blog-post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+.blog-post-content th,
+.blog-post-content td {
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 0.75rem;
+}
+.blog-post-content thead th {
+    background: var(--color-muted);
+}
+
 
 .blog-post-input:focus {
     outline: none;
@@ -91,6 +183,7 @@ function vColor(el: HTMLElement, binding: DirectiveBinding) {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -102,6 +195,7 @@ function vColor(el: HTMLElement, binding: DirectiveBinding) {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -111,6 +205,29 @@ function vColor(el: HTMLElement, binding: DirectiveBinding) {
 @media (max-width: 768px) {
     .blog-post-title {
         font-size: 1.875rem;
+    }
+}
+</style>
+
+<style>
+.blog-post-content .aside-image {
+    float: right;
+    width: 300px;
+    margin: 0 0 1rem 1.5rem;
+}
+
+.blog-post-content .aside-image img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .blog-post-content .aside-image {
+        float: none;
+        width: 100%;
+        margin: 1rem 0;
     }
 }
 </style>
