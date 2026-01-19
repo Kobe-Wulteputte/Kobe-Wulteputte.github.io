@@ -39,14 +39,77 @@ function handleClick() {
 </script>
 
 <template>
-  <button class="btn btn-primary" @click="handleClick()">{{ $t('blog.addPost') }}</button>
-  <div class="container py-2 px-2">
-    <div class="row">
-      <div class="col-xl-4 col-md-6 py-3" v-for="post of postList">
-        <PostCard :post="post" :is-main="post.id === 1"></PostCard>
+  <main class="blog-view">
+    <div class="container py-3xl">
+      <div class="blog-header">
+        <h1 class="blog-title">{{$t('blogpage.title')}}</h1>
+        <p class="blog-description">{{$t('blogpage.description')}}</p>
+      </div>
+
+      <div class="posts-grid">
+        <div v-for="post of postList" :key="post.id">
+          <PostCard :post="post" :is-main="post.id === 1"></PostCard>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.blog-view {
+  flex: 1;
+  background-color: var(--color-background);
+}
+
+.blog-header {
+  margin-bottom: 3rem;
+  animation: slideDownFadeIn var(--transition-normal) forwards;
+}
+
+.blog-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.blog-description {
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Animations */
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-header {
+    margin-bottom: 2rem;
+  }
+
+  .blog-title {
+    font-size: 1.875rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>

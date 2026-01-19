@@ -5,22 +5,27 @@ import Navbar from "./components/Navbar.vue";
 import { userKey } from "./utilities/injection-keys";
 import type User from "./models/User";
 
-// Voorbeeld van user die globaal beschikbaar moet zijn
 const activeUser = ref<User>({
   id: 1,
   name: "Kobe",
   settings: []
 })
 
-// Provide voorziet de child components van de user -> app.ts heeft dus alles als child, dus globaal
 provide(userKey, activeUser.value);
-
-
 </script>
 
 <template>
-  <Navbar />
-  <RouterView />
+  <div id="app">
+    <Navbar />
+    <RouterView />
+  </div>
 </template>
 
-<style></style>
+<style>
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+</style>

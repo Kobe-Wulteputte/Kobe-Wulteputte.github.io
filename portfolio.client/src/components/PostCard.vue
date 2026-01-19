@@ -1,51 +1,127 @@
 <script setup lang="ts">
 import type PostDTO from '@/models/PostDTO';
-import { onMounted } from 'vue';
 
-// Effe, hoe lelijk is deze default waarde zetten???
 const props = withDefaults(defineProps<{
   post: PostDTO;
   isMain?: boolean;
 }>(), {
   isMain: false,
 });
-// Een andere manier om props te definieren, maar even lelijk
-// const props = defineProps({
-//   post: {
-//     type: Object as PropType<PostDTO>,
-//     required: true,
-//   },
-//   isMain: {
-//     type: Boolean,
-//     required: false,
-//     default: false,
-//   },
-// })
-
-// Kleine note bij default waarde van boolean props: 
-// Deze zal default false zijn, en als de prop meegegeven worden (zelfs zonder waarde) wordt deze true.
-// De default is hier dus niet nodig, maar voor de duidelijkheid toch toegevoegd.
-
-// De variant van attached
-onMounted(() => {
-  console.log('mounted');
-});
-
-
 </script>
 
 <template>
-  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="p-4 d-flex flex-column position-static" :class="{ 'col-6': !isMain, 'col-8': isMain }">
-      <strong class="d-inline-block mb-2 text-success">{{ post.blogType }}</strong>
-      <h3 class="mb-0">{{ post.postTitle }}</h3>
-      <div class="mb-1 text-muted">{{ post.createdDate }}</div>
-      <p class="mb-auto">{{ post.short }}</p>
-
-      <router-link :to="{ name: 'post', params: { id: post.id } }"> <a class="stretched-link">{{ $t('blog.continueReading') }}</a></router-link>
+  <div class="post-card">
+    <div class="post-card-image-wrapper">
+      <img 
+        :src="post.thumbnail" 
+        :alt="post.postTitle"
+        class="post-card-image"
+        loading="lazy" />
     </div>
-    <div class="d-lg-block" :class="{ 'col-6': !isMain, 'col-4': isMain }">
-      <img style="object-fit: cover; height: 100%;" :src="post.thumbnail" alt="thumbnail" focusable="false" />
+    <div class="post-card-content">
+      <span class="post-card-tag">{{ post.blogType }}</span>
+      <h3 class="post-card-title">{{ post.postTitle }}</h3>
+      <time class="post-card-date">{{ new Date(post.createdDate).toLocaleDateString() }}</time>
+      <p class="post-card-excerpt">{{ post.short }}</p>
+      <router-link 
+        :to="{ name: 'post', params: { id: post.id } }"
+        class="post-card-link">
+        {{ $t('blog.continueReading') }} →
+      </router-link>
     </div>
   </div>
 </template>
+
+<style scoped>
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background-color: var(--color-background);
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.post-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.post-card-image-wrapper {
+  overflow: hidden;
+  background-color: var(--color-background-subtle);
+  aspect-ratio: 16 / 10;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-normal);
+}
+
+.post-card:hover .post-card-image {
+  transform: scale(1.02);
+}
+
+.post-card-content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.post-card-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.post-card-date {
+  font-size: 13px;
+  color: var(--color-tertiary);
+  margin-bottom: var(--spacing-lg);
+  display: block;
+}
+
+.post-card-excerpt {
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.post-card-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+  align-self: flex-start;
+}
+
+.post-card-link:hover {
+  color: var(--color-accent-hover);
+  padding-right: var(--spacing-sm);
+}
+</style>
