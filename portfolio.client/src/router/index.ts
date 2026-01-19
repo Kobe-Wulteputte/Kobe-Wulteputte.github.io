@@ -6,30 +6,27 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'about-me',
+      name: 'about',
       component: HomeView,
       meta: {
         nav: true,
-        title: 'About me'
       }
     },
     {
-      path: '/blog',
-      name: 'blog',
+      path: '/posts',
+      name: 'posts',
       component: () => import('../views/BlogView.vue'),
       meta: {
         nav: true,
-        title: 'Blog'
       }
     },
     {
-      path: '/blogpost/:id',
-      name: 'blogpost',
+      path: '/posts/:id',
+      name: 'post',
       props: true,
       component: () => import('../views/BlogPostView.vue'),
       meta: {
         nav: false,
-        title: 'Post'
       }
     }
   ]

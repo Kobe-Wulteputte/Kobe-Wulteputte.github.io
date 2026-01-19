@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import App from './App.vue'
 import router from './router'
+import i18n from './i18n'
+import I18NextVue from 'i18next-vue'
 
 import './styles/style.scss'
 import FontAwesomeIcon from './utilities/fontawesome-icons'
@@ -13,6 +15,7 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(I18NextVue, { i18next: i18n })
 
 app.directive('highlight', highlightDirective)
 

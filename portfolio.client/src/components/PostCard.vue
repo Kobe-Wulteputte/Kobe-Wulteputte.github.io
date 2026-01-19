@@ -42,8 +42,7 @@ onMounted(() => {
       <div class="mb-1 text-muted">{{ post.createdDate }}</div>
       <p class="mb-auto">{{ post.short }}</p>
 
-      <router-link :to="{ name: 'blogpost', params: { id: post.id } }"> <a class="stretched-link">Continue
-          reading</a></router-link>
+      <router-link :to="{ name: 'post', params: { id: post.id } }"> <a class="stretched-link">{{ $t('blog.continueReading') }}</a></router-link>
     </div>
     <div class="d-lg-block" :class="{ 'col-6': !isMain, 'col-4': isMain }">
       <img style="object-fit: cover; height: 100%;" :src="post.thumbnail" alt="thumbnail" focusable="false" />

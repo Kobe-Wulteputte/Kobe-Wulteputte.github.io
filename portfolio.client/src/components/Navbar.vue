@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
+import { getCurrentInstance } from "vue";
+import { useTranslation } from "i18next-vue";
+const tr = useTranslation();
 
 const router = useRouter();
 const currentRoute = useRoute();
+
 // Filter out non visible routes
 const routes = router.getRoutes().filter((e) => e.meta.nav);
+
+function changeLanguage(lang: string) {
+    tr.i18next.changeLanguage(lang);
+}
 </script>
 
 <template>
@@ -19,11 +27,27 @@ const routes = router.getRoutes().filter((e) => e.meta.nav);
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav" v-for="route of routes" :key="route.path">
-          <router-link :to="route.path" class="nav-item nav-link" :class="{ active: currentRoute.name == route.name }">{{
-            route.meta.title }}
+          <router-link :to="route.path" class="nav-item nav-link" :class="{ active: currentRoute.name == route.name }">
+            {{ $t(`navigation.${String(route.name)}`) }}
           </router-link>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <button class="nav-link btn btn-link" @click="changeLanguage('en')" :class="{ active: $i18next.language === 'en' }">
+            EN
+          </button>
+          <span class="nav-text"> / </span>
+          <button class="nav-link btn btn-link" @click="changeLanguage('nl')" :class="{ active: $i18next.language === 'nl' }">
+            NL
+          </button>
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+<style scoped>
+.nav-text {
+  margin: 0 5px;
+  cursor: default;
+}
+</style>

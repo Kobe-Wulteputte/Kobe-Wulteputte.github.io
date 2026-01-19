@@ -39,7 +39,7 @@ function handleClick() {
 </script>
 
 <template>
-  <button class="btn btn-primary" @click="handleClick()">Click me</button>
+  <button class="btn btn-primary" @click="handleClick()">{{ $t('blog.addPost') }}</button>
   <div class="container py-2 px-2">
     <div class="row">
       <div class="col-xl-4 col-md-6 py-3" v-for="post of postList">

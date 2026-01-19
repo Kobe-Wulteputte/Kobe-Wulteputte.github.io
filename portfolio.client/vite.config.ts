@@ -30,10 +30,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 7051,
-  },
-  preview: {
-    port: 7051,
+    port: 5173,
   },
   build: {
     target: 'esnext',
