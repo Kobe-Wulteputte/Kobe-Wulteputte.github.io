@@ -31,14 +31,22 @@ function changeLanguage(lang: string) {
             {{ $t(`navigation.${String(route.name)}`) }}
           </router-link>
         </div>
-        <div class="navbar-nav ms-auto">
-          <button class="nav-link btn btn-link" @click="changeLanguage('en')" :class="{ active: $i18next.language === 'en' }">
-            EN
-          </button>
-          <span class="nav-text"> / </span>
-          <button class="nav-link btn btn-link" @click="changeLanguage('nl')" :class="{ active: $i18next.language === 'nl' }">
-            NL
-          </button>
+        <div class="navbar-nav ms-auto d-flex align-items-center">
+          <div class="language-selector">
+            <font-awesome-icon :icon="['fas', 'globe']" class="globe-icon" />
+            <button 
+              class="lang-btn" 
+              @click="changeLanguage('en')" 
+              :class="{ active: $i18next.language === 'en' }">
+              EN
+            </button>
+            <button 
+              class="lang-btn" 
+              @click="changeLanguage('nl')" 
+              :class="{ active: $i18next.language === 'nl' }">
+              NL
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -46,8 +54,35 @@ function changeLanguage(lang: string) {
 </template>
 
 <style scoped>
-.nav-text {
-  margin: 0 5px;
-  cursor: default;
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 16px;
+}
+
+.globe-icon {
+  color: #6c757d;
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  font-size: 14px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #212529;
+}
+
+.lang-btn.active {
+  color: #212529;
+  font-weight: 500;
 }
 </style>
