@@ -2,6 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { marked } from 'marked'
 import type Post from '@/models/Post'
+import type Metadata from '@/models/Metadata'
 
 export interface BlogPost extends Post {
   contentEn: string
@@ -17,20 +18,13 @@ export const useBlogStore = defineStore('blog', () => {
 
   async function preloadAllPosts() {
     if (isLoaded.value || isLoading.value) return
-    
+
     isLoading.value = true
-    
+
     try {
       // Load metadata
       const metadataModule = await import('@/assets/blogdata/metadata.json')
-      const metadata = metadataModule.default as Array<{
-        id: string
-        postTitle: string
-        createdDate: string
-        short: string
-        tags: string
-        thumbnail: string
-      }>
+      const metadata = metadataModule.default as Array<Metadata>
 
       // Preload all posts in both languages
       const loadPromises = metadata.map(async (meta) => {
@@ -80,7 +74,7 @@ export const useBlogStore = defineStore('blog', () => {
   function getPostContent(id: string, language: 'en' | 'nl'): string {
     const post = posts.value.get(id)
     if (!post) return '<p>Post not found.</p>'
-    
+
     const content = language === 'nl' ? post.contentNl : post.contentEn
     return content || post.contentEn || post.contentNl || '<p>Content not available.</p>'
   }
