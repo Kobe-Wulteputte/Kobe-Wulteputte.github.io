@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy vue app to Pages
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./portfolio.client
-        run: npm ci
+        run: npm i
       
       - name: Build Vue app
         working-directory: ./portfolio.client
