@@ -1,7 +1,7 @@
 {
     "navigation": {
         "about": "About me",
-        "posts": "Posts"
+        "posts": "Projects"
     },
     "home": {
         "intro": "Quality-oriented Information Engineering major currently attending Ghent University. Aiming to leverage a proven knowlege of advanced technology skills to successfully fill the XXXXX role at your company. Frequently praised as hard working by my peers, I can be relied upon to help your company achieve its goals.",
@@ -14,13 +14,11 @@
         "projectDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est."
     },
     "blog": {
-        "addPost": "Click me",
-        "category": "Category",
         "continueReading": "Continue reading"
     },
     "blogpage": {
-        "title": "Blog Posts",
-        "description": "Read my latest blog posts about various topics including technology, programming, and software development."
+        "title": "Projects",
+        "description": "Read my latest projects about various topics including technology, programming, and software development."
     },
     "common": {
         "profilePicture": "Profile picture"

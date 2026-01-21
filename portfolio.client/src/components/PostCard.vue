@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type PostDTO from '@/models/Post';
+import { useLanguageStore } from '@/stores/LanguageStore';
+import { useTranslation } from 'i18next-vue';
 
+const lang = useLanguageStore();
 const props = withDefaults(defineProps<{
   post: PostDTO;
 }>(), {
@@ -18,7 +21,7 @@ const props = withDefaults(defineProps<{
       </div>
       <h3 class="post-card-title">{{ post.postTitle }}</h3>
       <time class="post-card-date">{{ new Date(post.createdDate).toLocaleDateString() }}</time>
-      <p class="post-card-excerpt">{{ post.short }}</p>
+      <p class="post-card-excerpt">{{ lang.currentLanguage === 'nl' ? post.shortNl : post.shortEn }}</p>
       <span class="post-card-link">{{ $t('blog.continueReading') }} →</span>
     </div>
   </router-link>

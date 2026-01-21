@@ -19,6 +19,3 @@ function hello() {
 ## Conclusion
 This dummy post shows basic markdown elements. Replace this content with your actual blog material.
 
----
-**Published:** 2024
-**Category:** Technical

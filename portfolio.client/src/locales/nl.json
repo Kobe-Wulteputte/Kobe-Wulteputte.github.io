@@ -1,7 +1,7 @@
 {
     "navigation": {
         "about": "Over mij",
-        "posts": "Berichten"
+        "posts": "Projecten"
     },
     "home": {
         "intro": "Kwaliteitsgericht Informatica-student op de Universiteit van Gent. Gericht op het benutten van bewezen geavanceerde technologische vaardigheden om succesvol de XXXXX-rol bij uw bedrijf in te vullen. Mijn collega's prijzen mij frequent om mijn werklustigheid, en je kunt op mij rekenen om uw bedrijf bij het bereiken van zijn doelstellingen te helpen.",
@@ -14,13 +14,11 @@
         "projectDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est."
     },
     "blog": {
-        "addPost": "Klik mij",
-        "category": "Categorie",
         "continueReading": "Verder lezen"
     },
     "blogpage": {
-        "title": "Blogberichten",
-        "description": "Lees mijn nieuwste blogberichten over verschillende onderwerpen, waaronder technologie, programmeren en softwareontwikkeling."
+        "title": "Projecten",
+        "description": "Zowel persoonlijke als professionele projecten."
     },
     "common": {
         "profilePicture": "Profielfoto"

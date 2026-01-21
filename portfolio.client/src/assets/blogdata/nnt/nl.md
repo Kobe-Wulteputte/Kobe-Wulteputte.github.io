@@ -19,6 +19,4 @@ function hello() {
 ## Conclusie
 Dit dummy-bericht toont basiselementen van markdown. Vervang deze inhoud door uw werkelijke blogmateriaal.
 
----
-**Gepubliceerd:** 2024
-**Categorie:** Technisch
+

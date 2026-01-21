@@ -3,7 +3,8 @@
         "id": "nnt",
         "postTitle": "Post over NNT",
         "createdDate": "2024-06-15",
-        "short": "This is a short description of the post",
+        "shortNl": "This is a short description of the post",
+        "shortEn": "This is a short description of the post",
         "tags": "Aurelia;.net",
         "thumbnail": "https://picsum.photos/id/30/200/300"
     },
@@ -11,7 +12,17 @@
         "id": "keuringsbewijs",
         "postTitle": "Post about Keuringsbewijs",
         "createdDate": "2024-06-20",
-        "short": "This is the post",
+        "shortNl": "This is the post",
+        "shortEn": "This is the post",
+        "tags": "Vue;Typescript",
+        "thumbnail": "https://picsum.photos/id/31/200/300"
+    },
+    {
+        "id": "banksync",
+        "postTitle": "Keeping track of your expenses",
+        "createdDate": "2024-05-20",
+        "shortNl": "Al je uitgaven bijhouden kan soms een hele klus zijn. Dit project helpt daarbij door je banktransacties automatisch te synchroniseren en categoriseren.",
+        "shortEn": "Keeping track of all your expenses can sometimes be quite a task. This project helps by automatically synchronizing and categorizing your bank transactions.",
         "tags": "Vue;Typescript",
         "thumbnail": "https://picsum.photos/id/31/200/300"
     }

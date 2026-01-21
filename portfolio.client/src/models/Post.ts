@@ -2,7 +2,8 @@ export default interface Post {
   id: string
   postTitle: string
   createdDate: Date
-  short: string
+  shortNl: string
+  shortEn: string
   tags: string[]
   thumbnail: string
 }
