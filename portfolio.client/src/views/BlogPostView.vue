@@ -55,6 +55,7 @@ onMounted(() => {
 .blog-post-view {
     flex: 1;
     background-color: var(--color-background);
+    padding-bottom: 4rem;
 }
 
 .hero-image {
