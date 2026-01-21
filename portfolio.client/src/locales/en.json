@@ -20,6 +20,9 @@
         "title": "Projects",
         "description": "Read my latest projects about various topics including technology, programming, and software development."
     },
+    "blogPostView": {
+        "backButton": "Back to projects"
+    },
     "common": {
         "profilePicture": "Profile picture"
     }

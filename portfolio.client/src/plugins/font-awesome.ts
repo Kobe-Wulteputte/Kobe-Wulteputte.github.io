@@ -3,6 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import {
+  faArrowLeft,
   faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons';
@@ -13,7 +14,8 @@ export const registerFontawesomeComponent = (app: App): void => {
     faGlobe,
     faGithub,
     faStrava,
-    faLinkedin
+    faLinkedin,
+    faArrowLeft
   );
   app.component('FontAwesomeIcon', FontAwesomeIcon);
 };

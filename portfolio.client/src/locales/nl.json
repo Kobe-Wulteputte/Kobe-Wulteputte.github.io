@@ -20,6 +20,9 @@
         "title": "Projecten",
         "description": "Zowel persoonlijke als professionele projecten."
     },
+    "blogPostView": {
+        "backButton": "Terug naar projecten"
+    },
     "common": {
         "profilePicture": "Profielfoto"
     }
