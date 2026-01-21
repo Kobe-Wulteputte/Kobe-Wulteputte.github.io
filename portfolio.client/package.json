@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build",
+    "build": "vite build --outDir ../wwwroot --emptyOutDir",
     "type-check": "vue-tsc --noEmit",
     "format": "prettier --write src/"
   },
