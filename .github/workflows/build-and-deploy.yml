@@ -31,6 +31,7 @@ jobs:
           node-version: '24'
           cache: 'npm'
           cache-dependency-path: 'portfolio.client/package-lock.json'
+          registry-url: 'https://registry.npmjs.org'
       
       - name: Install dependencies
         working-directory: ./portfolio.client
