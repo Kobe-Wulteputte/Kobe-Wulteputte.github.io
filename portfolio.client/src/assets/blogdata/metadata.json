@@ -2,20 +2,20 @@
     {
         "id": "nnt",
         "postTitle": "Post over NNT",
-        "createdDate": "2024-06-15",
+        "createdDate": "2023-06-15",
         "shortNl": "This is a short description of the post",
         "shortEn": "This is a short description of the post",
         "tags": "Aurelia;.net",
-        "thumbnail": "https://picsum.photos/id/30/200/300"
+        "thumbnail": "https://picsum.photos/id/30/800/600"
     },
     {
         "id": "keuringsbewijs",
         "postTitle": "Post about Keuringsbewijs",
-        "createdDate": "2024-06-20",
+        "createdDate": "2025-06-20",
         "shortNl": "This is the post",
         "shortEn": "This is the post",
         "tags": "Vue;Typescript",
-        "thumbnail": "https://picsum.photos/id/31/200/300"
+        "thumbnail": "https://picsum.photos/id/31/800/600"
     },
     {
         "id": "banksync",

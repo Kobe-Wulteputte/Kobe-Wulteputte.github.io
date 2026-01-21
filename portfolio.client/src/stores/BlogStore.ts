@@ -50,7 +50,7 @@ export const useBlogStore = defineStore('blog', () => {
   const isLoading = ref(false)
   const isLoaded = ref(false)
 
-  const allPosts = computed(() => Array.from(posts.value.values()))
+  const allPosts = computed(() => Array.from(posts.value.values()).sort((a, b) => b.createdDate.getTime() - a.createdDate.getTime()))
 
   async function preloadAllPosts() {
     if (isLoaded.value || isLoading.value) return
