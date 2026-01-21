@@ -9,6 +9,42 @@ export interface BlogPost extends Post {
   contentNl: string
 }
 
+// Eagerly import all images from blogdata folders using glob
+const imageModules = import.meta.glob('@/assets/blogdata/**/*.{png,jpg,jpeg,gif,svg,webp}', { eager: true, import: 'default' })
+
+// Helper function to process markdown images and resolve their paths
+async function processMarkdownImages(markdown: string, postId: string): Promise<string> {
+  const imageRegex = /!\[([^\]]*)\]\((?:\.\/)?([^):/]+\.[a-z]{3,4})\)/gi
+  let processed = markdown
+  const matches = [...markdown.matchAll(imageRegex)]
+  console.log(`Processing images for post ${postId}, found ${matches.length} images.`)
+
+  for (const match of matches) {
+    const [fullMatch, altText, imagePath] = match
+    // Build the module path that matches the glob pattern
+    const modulePath = `/src/assets/blogdata/${postId}/${imagePath}`
+    
+    // Find the matching imported module
+    let imageUrl: string | null = null
+    for (const [path, module] of Object.entries(imageModules)) {
+      // Normalize paths for comparison
+      const normalizedPath = path.replace('@/assets/blogdata/', '/src/assets/blogdata/')
+      if (normalizedPath === modulePath || normalizedPath.endsWith(`/${postId}/${imagePath}`)) {
+        imageUrl = module as string
+        break
+      }
+    }
+
+    if (imageUrl) {
+      processed = processed.replace(fullMatch, `![${altText}](${imageUrl})`)
+    } else {
+      console.warn(`Failed to load image ${imagePath} for post ${postId}`)
+    }
+  }
+
+  return processed
+}
+
 export const useBlogStore = defineStore('blog', () => {
   const posts = ref<Map<string, BlogPost>>(new Map())
   const isLoading = ref(false)
@@ -43,7 +79,9 @@ export const useBlogStore = defineStore('blog', () => {
         // Load English content
         try {
           const enModule = await import(`@/assets/blogdata/${meta.id}/en.md?raw`)
-          blogPost.contentEn = await marked.parse(enModule.default as string)
+          let enContent = enModule.default as string
+          enContent = await processMarkdownImages(enContent, meta.id)
+          blogPost.contentEn = await marked.parse(enContent)
         } catch (e) {
           console.warn(`Failed to load EN content for post ${meta.id}`, e)
         }
@@ -51,7 +89,9 @@ export const useBlogStore = defineStore('blog', () => {
         // Load Dutch content
         try {
           const nlModule = await import(`@/assets/blogdata/${meta.id}/nl.md?raw`)
-          blogPost.contentNl = await marked.parse(nlModule.default as string)
+          let nlContent = nlModule.default as string
+          nlContent = await processMarkdownImages(nlContent, meta.id)
+          blogPost.contentNl = await marked.parse(nlContent)
         } catch (e) {
           console.warn(`Failed to load NL content for post ${meta.id}`, e)
         }
