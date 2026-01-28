@@ -4,7 +4,7 @@
         "posts": "Projects"
     },
     "home": {
-        "intro": "Quality-oriented Information Engineering major currently attending Ghent University. Aiming to leverage a proven knowlege of advanced technology skills to successfully fill the XXXXX role at your company. Frequently praised as hard working by my peers, I can be relied upon to help your company achieve its goals.",
+        "intro": "I'm a passionate .NET developer with a passion for full-stack web development. Whether it's sleek API design, a smooth frontend experience, or optimizing backend processes, I dive in with full commitment. What drives me? Continuous learning, collaboration, and delivering quality. I love solving complex problems, sharing knowledge with colleagues, and building together towards robust, user-friendly applications. Technology changes rapidly, and that's what I find beautiful about it. There's always something new to discover and improve. That's what energizes me.",
         "workExperience": "Work Experience",
         "internship": "Internship",
         "internshipDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est.",
@@ -18,7 +18,7 @@
     },
     "blogpage": {
         "title": "Projects",
-        "description": "Read my latest projects about various topics including technology, programming, and software development."
+        "description": "Both personal and professional projects."
     },
     "blogPostView": {
         "backButton": "Back to projects"
