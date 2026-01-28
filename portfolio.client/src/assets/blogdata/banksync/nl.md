@@ -17,3 +17,7 @@ Om inzicht te krijgen in de ruwe data is het nodig om al deze transacties te cla
 ## Visualiseren van data
 
 Nu de grote hoeveelheid data geclassificeerd is, resteert enkel nog de taak om deze data te visualiseren. Hiervoor heb ik enkele Power BI-rapporten opgesteld die gebruikmaken van enkele slicers om de data te aggregeren over bepaalde tijdsperiodes en categorieën. Op deze manier kan ik steeds de meest recente data, zonder manuele interactie, bekijken en analyseren.
+
+
+---
+**Context:** Prive project

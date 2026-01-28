@@ -6,4 +6,5 @@ export default interface Metadata {
   shortEn: string
   tags: string
   thumbnail: string
+  visible: boolean
 }

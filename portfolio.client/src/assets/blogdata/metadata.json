@@ -1,21 +1,63 @@
 [
     {
-        "id": "nnt",
-        "postTitle": "Post over NNT",
+        "id": "eos",
+        "postTitle": "Post over EOS",
         "createdDate": "2023-06-15",
         "shortNl": "This is a short description of the post",
         "shortEn": "This is a short description of the post",
         "tags": "Aurelia;.net",
-        "thumbnail": "https://picsum.photos/id/30/800/600"
+        "thumbnail": "https://picsum.photos/id/30/800/600",
+        "visible": false
+    },
+    {
+        "id": "auragenie",
+        "postTitle": "Post over Auragenie",
+        "createdDate": "2023-06-15",
+        "shortNl": "This is a short description of the post",
+        "shortEn": "This is a short description of the post",
+        "tags": "OpenAI;Azure",
+        "thumbnail": "https://picsum.photos/id/30/800/600",
+        "visible": false
+    },
+    {
+        "id": "oefs",
+        "postTitle": "Post over OEFS",
+        "createdDate": "2023-06-15",
+        "shortNl": "This is a short description of the post",
+        "shortEn": "This is a short description of the post",
+        "tags": "OpenAI;Azure",
+        "thumbnail": "https://picsum.photos/id/30/800/600",
+        "visible": false
+    },
+    {
+        "id": "benefits",
+        "postTitle": "Custom benefits platform",
+        "createdDate": "2023-06-15",
+        "shortNl": "This is a short description of the post",
+        "shortEn": "This is a short description of the post",
+        "tags": "MVC;sharepoint;Identity provider",
+        "thumbnail": "https://picsum.photos/id/32/800/600",
+        "visible": false
+    },
+    {
+        "id": "stagebegeleiding",
+        "postTitle": "Internship lead",
+        "createdDate": "2023-06-15",
+        "shortNl": "This is a short description of the post",
+        "shortEn": "This is a short description of the post",
+        "tags": "Elastic;Kibana;Logstash",
+        "thumbnail": "https://picsum.photos/id/33/800/600",
+        "visible": false
     },
     {
         "id": "keuringsbewijs",
-        "postTitle": "Post about Keuringsbewijs",
-        "createdDate": "2025-06-20",
+        "postTitle": "Customer portal for belgian vehicle inspections",
+        "createdDate": "2025-01-10",
         "shortNl": "This is the post",
         "shortEn": "This is the post",
-        "tags": "Vue;Typescript",
-        "thumbnail": "https://picsum.photos/id/31/800/600"
+        "tags": "External partners;UI/UX;Peppol",
+        "thumbnail": "src/assets/blogdata/keuringsbewijs/keuringsbewijs-cover.jpg",
+        "visible": true
     },
     {
         "id": "banksync",
@@ -24,6 +66,7 @@
         "shortNl": "Al je uitgaven bijhouden kan soms een hele klus zijn. Dit project helpt daarbij door je banktransacties automatisch te synchroniseren en categoriseren.",
         "shortEn": "Keeping track of all your expenses can sometimes be quite a task. This project helps by automatically synchronizing and categorizing your bank transactions.",
         "tags": "AI;PowerBi;3rd party integrations",
-        "thumbnail": "https://cdn3.pixelcut.app/pixa_cms/media/d428bc13-9a25-424b-a537-2c9e74b61897_hero_image_992d343c.webp"
+        "thumbnail": "https://cdn3.pixelcut.app/pixa_cms/media/d428bc13-9a25-424b-a537-2c9e74b61897_hero_image_992d343c.webp",
+        "visible": true
     }
 ]

@@ -10,7 +10,10 @@ export interface BlogPost extends Post {
 }
 
 // Eagerly import all images from blogdata folders using glob
-const imageModules = import.meta.glob('@/assets/blogdata/**/*.{png,jpg,jpeg,gif,svg,webp}', { eager: true, import: 'default' })
+const imageModules = import.meta.glob('@/assets/blogdata/**/*.{png,jpg,jpeg,gif,svg,webp}', {
+  eager: true,
+  import: 'default'
+})
 
 // Helper function to process markdown images and resolve their paths
 async function processMarkdownImages(markdown: string, postId: string): Promise<string> {
@@ -23,7 +26,7 @@ async function processMarkdownImages(markdown: string, postId: string): Promise<
     const [fullMatch, altText, imagePath] = match
     // Build the module path that matches the glob pattern
     const modulePath = `/src/assets/blogdata/${postId}/${imagePath}`
-    
+
     // Find the matching imported module
     let imageUrl: string | null = null
     for (const [path, module] of Object.entries(imageModules)) {
@@ -50,7 +53,11 @@ export const useBlogStore = defineStore('blog', () => {
   const isLoading = ref(false)
   const isLoaded = ref(false)
 
-  const allPosts = computed(() => Array.from(posts.value.values()).sort((a, b) => b.createdDate.getTime() - a.createdDate.getTime()))
+  const allPosts = computed(() =>
+    Array.from(posts.value.values())
+      .filter(post => post.visible)
+      .sort((a, b) => b.createdDate.getTime() - a.createdDate.getTime())
+  )
 
   async function preloadAllPosts() {
     if (isLoaded.value || isLoading.value) return
@@ -72,8 +79,15 @@ export const useBlogStore = defineStore('blog', () => {
           shortEn: meta.shortEn,
           tags: meta.tags.split(';'),
           thumbnail: meta.thumbnail,
+          visible: meta.visible,
           contentEn: '',
           contentNl: ''
+        }
+
+        if (!blogPost.visible) {
+          // If the post is not visible, skip loading content
+          posts.value.set(meta.id, blogPost)
+          return
         }
 
         // Load English content

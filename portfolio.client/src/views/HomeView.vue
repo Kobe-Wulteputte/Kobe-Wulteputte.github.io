@@ -8,22 +8,19 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-image">
-            <img 
-              src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg"
-              :alt="$t('common.profilePicture')"
-              loading="lazy" />
+            <img src="@/assets/images/portret.png" :alt="$t('common.profilePicture')" loading="lazy" />
           </div>
           <div class="hero-content">
             <h1 class="hero-title">Kobe Wulteputte</h1>
             <p class="hero-description">{{ $t('home.intro') }}</p>
             <div class="social-links">
-              <a href="http://www.google.be" class="social-link" aria-label="Github" title="Github">
+              <a href="https://github.com/Kobe-Wulteputte" target="_blank" class="social-link" aria-label="Github" title="Github">
                 <FontAwesomeIcon :icon="['fab', 'github']" />
               </a>
-              <a href="http://www.google.be" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/kobe-w/" target="_blank" class="social-link" aria-label="LinkedIn" title="LinkedIn">
                 <FontAwesomeIcon :icon="['fab', 'linkedin']" />
               </a>
-              <a href="http://www.google.be" class="social-link" aria-label="Strava" title="Strava">
+              <a href="https://www.strava.com/athletes/18349314" target="_blank" class="social-link" aria-label="Strava" title="Strava">
                 <FontAwesomeIcon :icon="['fab', 'strava']" />
               </a>
             </div>
@@ -36,7 +33,7 @@
     <section class="experience-section">
       <div class="container">
         <h2 class="section-title">{{ $t('home.workExperience') }}</h2>
-        
+
         <div class="experience-timeline">
           <!-- Experience Item -->
           <div class="experience-item">
@@ -178,9 +175,17 @@
   animation: slideUpFadeIn var(--transition-normal) forwards;
 }
 
-.experience-item:nth-child(1) { animation-delay: 0s; }
-.experience-item:nth-child(2) { animation-delay: 0.1s; }
-.experience-item:nth-child(3) { animation-delay: 0.2s; }
+.experience-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.experience-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.experience-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
 
 .experience-item:hover {
   box-shadow: var(--shadow-md);
@@ -240,6 +245,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

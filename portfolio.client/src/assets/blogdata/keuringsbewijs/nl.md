@@ -1,32 +1,25 @@
-# Dummy Blogbericht
+# Digitaliseren van het keuringsbewijs
 
-## Inleiding
-Dit is een plaatshouder blogbericht om markdown-opmaak en structuur te demonstreren.
+Dit project heb ik uitgevoerd in dienst van meerdere Belgische keuringsbedrijven. Al deze bedrijven werken intern met hetzelfde software pakket voor het bijhouden van uitgevoerde keuringen, en voor het opstellen van het keuringsbewijs.
 
-![Blog afbeelding](https://picsum.photos/800/400?random=keuringsbewijs)
+Om het keuringsbewijs up to date te houden kwam de vraag van de keuringsmaatschappijen om een portaal te voorzien waarop iedereen die een keuring heeft laten uitvoeren zijn resultaten digitaal kan opvragen. Belangrijk hierbij is dat het voor allerhande gebruikers eenvoudig moet zijn om de gegevens op te vragen.
 
-## Hoofdinhoud
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dit gedeelte bevat de primaire informatie die u aan uw lezers wilt overbrengen.
-<div class="aside-image">
-![Aside afbeelding](https://picsum.photos/300/400?random=aside-nl)
-</div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dit gedeelte bevat de primaire informatie die u aan uw lezers wilt overbrengen.
-
-### Subsectie
-U kunt inhoud in subsecties ordenen voor betere leesbaarheid en navigatie.
-
-## Codevoorbeeld
-```javascript
-function hello() {
-    console.log("Hallo, wereld!");
-}
-```
+Zo is simpele webapplicatie uitgewerkt die d.m.v. een QR-code op het keuringsbewijs geraadpleegt kan worden. Ook is een integratie met Mijn Burgerprofiel voorzien om de gegevens op te vragen zonder het bewijs in handen te hebben.
 
 
+## Wat was mijn rol in het team
+Dit project heb ik uitgevoerd met 2 mede developers en 1 PM'er. Mijn taken waren eerst het maken van een functionele en technische analyse. Dit in samenspraak met de klant. Vervolgens heb ik de rol van technical lead opgenomen tijdens het development process. Mijn taken als lead waren o.a. het in goede banen lijden van integraties met o.a. het software pakket van de keuringsbewijzen als het opzetten van de cloud omgeving en pipelines.
 
-## Conclusie
-Dit dummy-bericht toont basiselementen van markdown. Vervang deze inhoud door uw werkelijke blogmateriaal.
+## Peppol
+In een latere fase van het project is ook beslist om dit portaal uit te bereiden met een Peppol integratie. Zo kunnen klanten van de keuringsmaatschappijen zelfstanding hun factuur aanvragen en versturen via Peppol. Dit verlaagt de workload bij de bedrijven en zorgt ervoor dat elke zelfstandige zijn keuringen correct en vlot in de boekhouding komen.
+
+## Wat was er belangrijk
+In dit project is er samengewerkt met meerdere keuringsbedrijven, meerdere IT partners van deze bedrijven en zelfs technische afdelingen van de overheid voor het opvragen van voertuigdata en het sturen naar Mijn Burgerprofiel.
+Door de grote hoeveelheid betrokken partijen was duidelijke communicatie essentieel. Elke partij moest zich bewust zijn van het doel van het project en zowel op functioneel als technisch vlak weten wat te doen.  Dit was bijgevolg het meest uitdagende aan het project. 
+
 
 ---
-**Gepubliceerd:** 2024
-**Categorie:** Technisch
+**Context:** Professioneel project
+
+**Tech stack:** Vue, .NET Api, Azure web api & functions, Billit
+

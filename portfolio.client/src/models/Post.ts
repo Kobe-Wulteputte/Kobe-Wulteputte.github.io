@@ -6,5 +6,6 @@ export default interface Post {
   shortEn: string
   tags: string[]
   thumbnail: string
+  visible: boolean
 }
 
