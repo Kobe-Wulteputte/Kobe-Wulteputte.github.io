@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { marked } from 'marked'
+import { useImageStore } from './ImageStore'
 import type Post from '@/models/Post'
 import type Metadata from '@/models/Metadata'
 
@@ -9,34 +10,21 @@ export interface BlogPost extends Post {
   contentNl: string
 }
 
-// Eagerly import all images from blogdata folders using glob
-const imageModules = import.meta.glob('@/assets/blogdata/**/*.{png,jpg,jpeg,gif,svg,webp}', {
-  eager: true,
-  import: 'default'
-})
-
 // Helper function to process markdown images and resolve their paths
 async function processMarkdownImages(markdown: string, postId: string): Promise<string> {
+  const imageStore = useImageStore()
   const imageRegex = /!\[([^\]]*)\]\((?:\.\/)?([^):/]+\.[a-z]{3,4})\)/gi
   let processed = markdown
   const matches = [...markdown.matchAll(imageRegex)]
-  console.log(`Processing images for post ${postId}, found ${matches.length} images.`)
+  console.debug(`Processing images for post ${postId}, found ${matches.length} images.`)
 
   for (const match of matches) {
     const [fullMatch, altText, imagePath] = match
-    // Build the module path that matches the glob pattern
-    const modulePath = `/src/assets/blogdata/${postId}/${imagePath}`
+    // Build the relative path for the image store
+    const relativePath = `blogdata/${postId}/${imagePath}`
 
-    // Find the matching imported module
-    let imageUrl: string | null = null
-    for (const [path, module] of Object.entries(imageModules)) {
-      // Normalize paths for comparison
-      const normalizedPath = path.replace('@/assets/blogdata/', '/src/assets/blogdata/')
-      if (normalizedPath === modulePath || normalizedPath.endsWith(`/${postId}/${imagePath}`)) {
-        imageUrl = module as string
-        break
-      }
-    }
+    // Get the image URL from the ImageStore
+    const imageUrl = imageStore.getImageUrl(relativePath)
 
     if (imageUrl) {
       processed = processed.replace(fullMatch, `![${altText}](${imageUrl})`)

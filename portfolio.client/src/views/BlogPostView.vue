@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { userKey } from '@/utilities/injection-keys';
 import { useTranslation } from 'i18next-vue';
-import { inject, computed, type DirectiveBinding } from 'vue';
+import { inject, computed, onMounted, type DirectiveBinding } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBlogStore } from '@/stores/BlogStore';
+import { useImageStore } from '@/stores/ImageStore';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const props = defineProps<{
@@ -12,6 +13,7 @@ const props = defineProps<{
 const tr = useTranslation();
 const router = useRouter();
 const blogStore = useBlogStore();
+const imageStore = useImageStore();
 
 const currentLang = computed(() => {
     const lang = tr.i18next.language || 'en';
@@ -21,17 +23,22 @@ const currentLang = computed(() => {
 const postMetaData = computed(() => blogStore.getPost(props.id));
 const postContent = computed(() => blogStore.getPostContent(props.id, currentLang.value));
 
+const thumbnailUrl = computed(() => {
+    if (!postMetaData.value?.thumbnail) return '';
+    return imageStore.getImageUrl(postMetaData.value.thumbnail) || postMetaData.value.thumbnail;
+});
 
 onMounted(() => {
     // Scroll to top when the component is mounted
     window.scrollTo(0, 150);
 });
+
 </script>
 
 <template>
     <main class="blog-post-view">
-        <div v-if="postMetaData?.thumbnail" class="hero-image">
-            <img :src="postMetaData.thumbnail" :alt="postMetaData.postTitle" />
+        <div v-if="postMetaData?.thumbnail && thumbnailUrl" class="hero-image">
+            <img :src="thumbnailUrl" :alt="postMetaData.postTitle" />
         </div>
         <div class="container">
             <article class="blog-post">

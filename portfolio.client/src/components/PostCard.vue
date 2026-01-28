@@ -1,19 +1,26 @@
 <script setup lang="ts">
 import type PostDTO from '@/models/Post';
 import { useLanguageStore } from '@/stores/LanguageStore';
+import { useImageStore } from '@/stores/ImageStore';
 import { useTranslation } from 'i18next-vue';
+import { computed } from 'vue';
 
 const lang = useLanguageStore();
+const imageStore = useImageStore();
 const props = withDefaults(defineProps<{
   post: PostDTO;
 }>(), {
+});
+
+const thumbnailUrl = computed(() => {
+  return imageStore.getImageUrl(props.post.thumbnail) || props.post.thumbnail;
 });
 </script>
 
 <template>
   <router-link class="post-card" :to="{ name: 'post', params: { id: post.id } }" :aria-label="post.postTitle">
     <div class="post-card-image-wrapper">
-      <img :src="post.thumbnail" :alt="post.postTitle" class="post-card-image" loading="lazy" />
+      <img :src="thumbnailUrl" :alt="post.postTitle" class="post-card-image" loading="lazy" />
     </div>
     <div class="post-card-content">
       <div class="d-flex flex-row gap-2">
