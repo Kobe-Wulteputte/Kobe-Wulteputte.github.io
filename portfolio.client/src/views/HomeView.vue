@@ -14,13 +14,16 @@
             <h1 class="hero-title">Kobe Wulteputte</h1>
             <p class="hero-description">{{ $t('home.intro') }}</p>
             <div class="social-links">
-              <a href="https://github.com/Kobe-Wulteputte" target="_blank" class="social-link" aria-label="Github" title="Github">
+              <a href="https://github.com/Kobe-Wulteputte" target="_blank" class="social-link" aria-label="Github"
+                title="Github">
                 <FontAwesomeIcon :icon="['fab', 'github']" />
               </a>
-              <a href="https://www.linkedin.com/in/kobe-w/" target="_blank" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/kobe-w/" target="_blank" class="social-link" aria-label="LinkedIn"
+                title="LinkedIn">
                 <FontAwesomeIcon :icon="['fab', 'linkedin']" />
               </a>
-              <a href="https://www.strava.com/athletes/18349314" target="_blank" class="social-link" aria-label="Strava" title="Strava">
+              <a href="https://www.strava.com/athletes/18349314" target="_blank" class="social-link" aria-label="Strava"
+                title="Strava">
                 <FontAwesomeIcon :icon="['fab', 'strava']" />
               </a>
             </div>
@@ -31,40 +34,64 @@
 
     <!-- Work Experience Section -->
     <section class="experience-section">
-      <div class="container">
+      <div class="container experience-timeline">
         <h2 class="section-title">{{ $t('home.workExperience') }}</h2>
 
-        <div class="experience-timeline">
-          <!-- Experience Item -->
-          <div class="experience-item">
-            <div class="experience-header">
-              <h3 class="experience-title">{{ $t('home.internship') }}</h3>
-            </div>
-            <div class="experience-body">
-              <p>{{ $t('home.internshipDescription') }}</p>
-            </div>
-          </div>
 
-          <!-- Experience Item -->
-          <div class="experience-item">
-            <div class="experience-header">
-              <h3 class="experience-title">{{ $t('home.thesis') }}</h3>
-            </div>
-            <div class="experience-body">
-              <p>{{ $t('home.thesisDescription') }}</p>
-            </div>
+        <!-- Experience Item -->
+        <div class="experience-item">
+          <div class="talking-point-header">
+            <h3 class="experience-title talking-point-title">{{ $t('home.orbid.title') }}</h3>
           </div>
-
-          <!-- Experience Item -->
-          <div class="experience-item">
-            <div class="experience-header">
-              <h3 class="experience-title">{{ $t('home.project') }}</h3>
-            </div>
-            <div class="experience-body">
-              <p>{{ $t('home.projectDescription') }}</p>
-            </div>
+          <div class="experience-body">
+            <p>{{ $t('home.orbid.description') }}</p>
           </div>
         </div>
+
+        <!-- Experience Item -->
+        <div class="experience-item">
+          <div class="talking-point-header">
+            <h3 class="experience-title talking-point-title">{{ $t('home.internship.title') }}</h3>
+          </div>
+          <div class="experience-body">
+            <p>{{ $t('home.internship.description') }}</p>
+          </div>
+        </div>
+
+        <!-- Experience Item -->
+        <div class="experience-item">
+          <div class="talking-point-header">
+            <h3 class="experience-title talking-point-title">{{ $t('home.education.title') }}</h3>
+          </div>
+          <div class="experience-body">
+            <p>{{ $t('home.education.description') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="free-time-section">
+      <div class="container experience-timeline">
+        <h2 class="section-title">{{ $t('home.freeTime.title') }}</h2>
+
+        <div class="free-time-item">
+          <div class="talking-point-header">
+            <h3 class="talking-point-title">{{ $t('home.freeTime.title') }}</h3>
+          </div>
+          <div class="experience-body">
+            <p>{{ $t('home.freeTime.description') }}</p>
+          </div>
+        </div>
+
+        <div class="free-time-item">
+          <div class="talking-point-header">
+            <h3 class="talking-point-title">{{ $t('home.eventOrganiser.title') }}</h3>
+          </div>
+          <div class="experience-body">
+            <p>{{ $t('home.eventOrganiser.description') }}</p>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -153,6 +180,11 @@
   background-color: var(--color-background-subtle);
 }
 
+.free-time-section {
+  padding: 4rem 0;
+  background-color: var(--color-background);
+}
+
 .section-title {
   text-align: center;
   font-size: 2rem;
@@ -169,6 +201,15 @@
 .experience-item {
   background-color: var(--color-background);
   border-left: 3px solid var(--color-accent);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+  animation: slideUpFadeIn var(--transition-normal) forwards;
+}
+
+.free-time-item {
+  background-color: var(--color-background-subtle);
+  border-right: 3px solid var(--color-accent);
   padding: 2rem;
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-normal);
@@ -193,16 +234,17 @@
   border-left-color: var(--color-accent-hover);
 }
 
-.experience-header {
+.talking-point-header {
   margin-bottom: 1rem;
 }
 
-.experience-title {
+.talking-point-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-primary);
   margin: 0;
 }
+
 
 .experience-body p {
   margin: 0;

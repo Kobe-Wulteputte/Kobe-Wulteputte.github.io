@@ -5,10 +5,15 @@ import i18next from '@/i18n'
 const LANGUAGE_STORAGE_KEY = 'app-language'
 
 export const useLanguageStore = defineStore('language', () => {
-  // Initialize from localStorage or default to 'en'
+  
   const getSavedLanguage = () => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'en'
+      const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY)
+      if (saved) return saved
+      
+      // Detect browser language
+      const browserLang = navigator.language.toLowerCase()
+      return browserLang.startsWith('nl') ? 'nl' : 'en'
     }
     return 'en'
   }

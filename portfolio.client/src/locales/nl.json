@@ -4,14 +4,28 @@
         "posts": "Projecten"
     },
     "home": {
-        "intro": "Ik ben een gedreven .NET developer met een passie voor full-stack webontwikkeling. Of het nu gaat om een strak API-design, een soepele frontend-ervaring of het optimaliseren van backend-processen, ik duik er met volle inzet in. Wat mij drijft? Blijven leren, samenwerken en kwaliteit leveren. Ik hou ervan om complexe problemen op te lossen, kennis te delen met collega’s en samen te bouwen aan robuuste, gebruiksvriendelijke applicaties. Technologie verandert snel, en dat vind ik juist het mooie eraan. Er is altijd iets nieuws te ontdekken en te verbeteren. Daar krijg ik energie van.",
+        "intro": "Ik ben een gedreven .NET developer met een sterke interesse in full-stack webontwikkeling. Van doordacht API-design en performante backend-oplossingen tot een gebruiksvriendelijke frontend, ik werk graag mee aan het volledige plaatje. Wat mij motiveert is blijven bijleren, samenwerken en kwaliteit afleveren. Ik haal voldoening uit het oplossen van complexe vraagstukken, het delen van kennis met collega's en het bouwen van robuuste, onderhoudbare applicaties. De snelle evolutie van technologie zie ik als een kans om continu te verbeteren en nieuwe inzichten op te doen.",
         "workExperience": "Werkervaring",
-        "internship": "Stage",
-        "internshipDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est.",
-        "thesis": "Thesis",
-        "thesisDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia, nulla non congue aliquam, est nunc faucibus velit, in fringilla sem lectus in mi. Praesent pharetra in erat nec auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum quis condimentum libero. Fusce mauris sem, feugiat et elit vitae, rhoncus faucibus sapien. Duis interdum, erat vitae varius sodales, mauris purus luctus lorem, a tincidunt diam arcu nec eros. Nunc cursus, libero vitae scelerisque pharetra, nibh libero vestibulum risus, in aliquet purus tellus a nunc. Aliquam ornare nisl ut augue scelerisque, ac sagittis ante tristique.",
-        "project": "Project",
-        "projectDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est."
+        "orbid": {
+            "title": "Orbid",
+            "description": "Mijn professionele carrière startte bij Orbid als softwareontwikkelaar. Daar werkte ik mee aan uiteenlopende projecten rond maatwerksoftware voor klanten uit verschillende sectoren. Ik was verantwoordelijk voor het full-stack ontwikkelen van webapplicaties, het opzetten van cloudomgevingen en het samenwerken met een team om projecten tijdig en binnen scope op te leveren. Naarmate mijn ervaring groeide, kreeg ik ook de kans om analyses op te stellen en technisch de leiding te nemen bij projecten."
+        },
+        "internship": {
+            "title": "Stage",
+            "description": "Tijdens een stage van één maand maakte ik deel uit van het backendteam bij Spraying Systems in Gent. Ik werkte mee aan de ontwikkeling van een productcatalogus API op basis van .NET Core. Deze ervaring liet mij toe mijn kennis van API-ontwerp en -ontwikkeling verder te verdiepen en gaf me een beter inzicht in bedrijfsprocessen binnen een industriële omgeving."
+        },
+        "education": {
+            "title": "Studies",
+            "description": "Industriële Wetenschappen - Informatica aan de Universiteit Gent. Tijdens mijn studie heb ik een sterke basis gelegd in computerwetenschappen, met vakken variërend van algoritmen en datastructuren tot software engineering en webontwikkeling."
+        },
+        "freeTime": {
+            "title": "Vrije tijd",
+            "description": "In mijn vrije tijd ben ik graag sportief bezig op de fiets. Ik doe regelmatig mee aan wielerevenementen en geniet van stevige ritten in de Vlaamse Ardennen. Fietsen helpt me om mijn hoofd leeg te maken en nieuwe energie op te doen."
+        },
+        "eventOrganiser": {
+            "title": "Evenementorganisator",
+            "description": "Al enkele jaren ben ik medeorganisator van een lokale quizavond. Hierbij sta ik in voor de planning, coördinatie en praktische uitvoering van het evenement, evenals het aantrekken van deelnemers en het creëren van een aangename en ontspannen sfeer."
+        }
     },
     "blog": {
         "continueReading": "Verder lezen"

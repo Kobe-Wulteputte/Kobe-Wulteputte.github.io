@@ -4,14 +4,28 @@
         "posts": "Projects"
     },
     "home": {
-        "intro": "I'm a passionate .NET developer with a passion for full-stack web development. Whether it's sleek API design, a smooth frontend experience, or optimizing backend processes, I dive in with full commitment. What drives me? Continuous learning, collaboration, and delivering quality. I love solving complex problems, sharing knowledge with colleagues, and building together towards robust, user-friendly applications. Technology changes rapidly, and that's what I find beautiful about it. There's always something new to discover and improve. That's what energizes me.",
+        "intro": "I'm a driven .NET developer with a strong interest in full-stack web development. From thoughtful API design and performant backend solutions to user-friendly frontend, I enjoy contributing to the complete picture. What motivates me is continuous learning, collaboration, and delivering quality. I find satisfaction in solving complex problems, sharing knowledge with colleagues, and building robust, maintainable applications. I see the rapid evolution of technology as an opportunity to continuously improve and gain new insights.",
         "workExperience": "Work Experience",
-        "internship": "Internship",
-        "internshipDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est.",
-        "thesis": "Thesis",
-        "thesisDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia, nulla non congue aliquam, est nunc faucibus velit, in fringilla sem lectus in mi. Praesent pharetra in erat nec auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum quis condimentum libero. Fusce mauris sem, feugiat et elit vitae, rhoncus faucibus sapien. Duis interdum, erat vitae varius sodales, mauris purus luctus lorem, a tincidunt diam arcu nec eros. Nunc cursus, libero vitae scelerisque pharetra, nibh libero vestibulum risus, in aliquet purus tellus a nunc. Aliquam ornare nisl ut augue scelerisque, ac sagittis ante tristique.",
-        "project": "Project",
-        "projectDescription": "Ut non felis laoreet, dictum enim ac, porta turpis. Mauris scelerisque a eros a viverra. Nam at sem quis tellus dignissim interdum. Aliquam sapien lectus, fermentum sed posuere pulvinar, rutrum eu velit. Integer rhoncus eget diam molestie convallis. Aenean tincidunt malesuada purus eget pharetra. Sed non nulla vehicula, tincidunt odio nec, consequat arcu. Sed a dui in ipsum volutpat rutrum. Nullam interdum lacus justo, vel bibendum justo egestas pharetra. Praesent semper dui et placerat convallis. Nulla sagittis sem dolor, eget commodo purus vehicula id. Mauris posuere feugiat nisl ut rhoncus. Proin sit amet blandit ante. Integer pretium nulla erat, ut pharetra neque luctus non. Vivamus enim felis, dapibus quis efficitur sit amet, consequat a est."
+        "orbid": {
+            "title": "Orbid",
+            "description": "My professional career started at Orbid as a software developer. There I worked on various projects involving custom software for clients from different sectors. I was responsible for full-stack development of web applications, setting up cloud environments, and collaborating with a team to deliver projects on time and within scope. As my experience grew, I also had the opportunity to conduct analyses and take technical leadership on projects."
+        },
+        "internship": {
+            "title": "Internship",
+            "description": "During a one-month internship, I was part of the backend team at Spraying Systems in Ghent. I contributed to the development of a product catalog API based on .NET Core. This experience allowed me to deepen my knowledge of API design and development, and gave me better insight into business processes within an industrial environment."
+        },
+        "education": {
+            "title": "Studies",
+            "description": "Industrial Sciences - Information engineering technology at Ghent University. During my studies, I built a strong foundation in computer science, with courses ranging from algorithms and data structures to software engineering and web development."
+        },
+        "freeTime": {
+            "title": "Free Time",
+            "description": "In my free time, I enjoy cycling. I regularly participate in cycling events and enjoy challenging rides in the Flemish Ardennes. Cycling helps me clear my mind and recharge."
+        },
+        "eventOrganiser": {
+            "title": "Event Organizer",
+            "description": "For several years, I've been a co-organizer of a local quiz night. I'm responsible for planning, coordination, and practical execution of the event, as well as attracting participants and creating a pleasant and relaxed atmosphere."
+        }
     },
     "blog": {
         "continueReading": "Continue reading"
