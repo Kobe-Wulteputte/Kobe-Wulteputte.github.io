@@ -29,7 +29,6 @@ const thumbnailUrl = computed(() => {
 });
 
 onMounted(() => {
-    // Scroll to top when the component is mounted
     window.scrollTo(0, 150);
 });
 
@@ -132,7 +131,6 @@ onMounted(() => {
     opacity: 0;
 }
 
-/* Markdown content styling */
 .blog-post-content :is(h1, h2, h3, h4, h5, h6) {
     color: var(--color-primary);
     margin: 1.5rem 0 0.75rem;

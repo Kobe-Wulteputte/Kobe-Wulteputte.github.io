@@ -56,7 +56,6 @@ const postList = computed(() => blogStore.allPosts);
   gap: 2rem;
 }
 
-/* Animations */
 @keyframes slideDownFadeIn {
   from {
     opacity: 0;
@@ -69,7 +68,6 @@ const postList = computed(() => blogStore.allPosts);
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .blog-header {
     margin-bottom: 2rem;

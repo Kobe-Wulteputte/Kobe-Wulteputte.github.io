@@ -18,12 +18,11 @@ export default defineConfig({
     }),
     AutoImport({
       include: [
-        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.[tj]sx?$/,
         /\.vue$/,
-        /\.vue\?vue/, // .vue
+        /\.vue\?vue/,
       ],
       imports: [
-        // presets
         'vue',
         'vue-router',
       ],

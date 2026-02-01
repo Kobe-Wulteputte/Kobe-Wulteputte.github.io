@@ -102,7 +102,6 @@
   flex: 1;
 }
 
-/* Hero Section */
 .hero-section {
   padding: 4rem 0;
   background-color: var(--color-background);
@@ -174,7 +173,6 @@
   transform: translateY(-2px);
 }
 
-/* Experience Section */
 .experience-section {
   padding: 4rem 0;
   background-color: var(--color-background-subtle);
