@@ -19,3 +19,7 @@ To address this, AI is used for classification. OpenAI makes it possible to trai
 ## Visualizing the data
 
 Now that a large amount of data has been classified, the final step is visualization. For this, I created several Power BI reports that use slicers to aggregate data across specific time periods and categories. This approach allows me to view and analyze the most recent data at any time, without manual interaction.
+
+---
+
+**Context:** Hobby project
