@@ -1,35 +1,20 @@
-# Dummy Blog Post
+# Experimenting with AI Chatbots
 
-## Introduction
-This is a placeholder blog post to demonstrate markdown formatting and structure.
+## The Idea
 
-![Blog image](https://picsum.photos/800/400?random=certification)
+Out of interest in emerging LLMs, I created my own chatbot that analyzes events and awards "aura points" for them. This chatbot was named Aura Genie.
+The chatbot operates using the OpenAI API. A prompt is included to define what is expected from the genie.
 
-## Main Content
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. This section contains the primary information you want to convey to your readers.
+To make this accessible, I built and hosted a simple chat application in Azure. Azure AD was used for authentication. This allowed everyone from the software department to log in, share their coolest moments, and an aura leaderboard was maintained.
 
-<div class="aside-image">
+It didn't take long before this became a hit among colleagues and the application was consequently subjected to a stress test.
 
-![Aside image](https://picsum.photos/300/400?random=aside-en)
+## A Valuable Learning Experience
 
-</div>
-
-Some more dummy text
-
-### Subsection
-You can organize content into subsections for better readability and navigation.
-
-## Code Example
-```javascript
-function hello() {
-    console.log("Hello, World!");
-}
-```
-
-
-## Conclusion
-This dummy post shows basic markdown elements. Replace this content with your actual blog material.
+This project was a fun way for me to get acquainted with the OpenAI API and the possibilities of LLMs. Additionally, it was also a good exercise in setting up real-time communication via websockets and managing user authentication with Azure AD.
 
 ---
-**Published:** 2024
-**Category:** Technical
+
+**Context:** Hobby project
+
+**Tech stack:** OpenAI API, Vue, .net, SqlLite, Azure

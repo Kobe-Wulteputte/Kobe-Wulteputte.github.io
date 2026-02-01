@@ -1,8 +1,9 @@
 [
     {
         "id": "eos",
+        "sequence": 1,
         "postTitle": "Custom ERP for terminal operator",
-        "createdDate": "2023-06-15",
+        "createdDate": "2022-05-23",
         "shortNl": "Ontwikkeling van een maatwerk ERP voor de Antwerpse haven, met focus op integraties, fullstack development en efficiënte bedrijfsprocessen.",
         "shortEn": "Developing a custom ERP for the Port of Antwerp, focusing on integrations, fullstack development, and efficient business processes.",
         "tags": ".NET;Aurelia;SQL Server",
@@ -10,19 +11,43 @@
         "visible": true
     },
     {
+        "id": "keuringsbewijs",
+        "sequence": 2,
+        "postTitle": "Customer portal for belgian vehicle inspections",
+        "createdDate": "2025-01-10",
+        "shortNl": "Een klantenportaal voor het raadplegen van keuringsgevens, met integratie naar Peppol.",
+        "shortEn": "A customer portal for consulting inspection data, with integration to Peppol.",
+        "tags": "External partners;UI/UX;Peppol",
+        "thumbnail": "blogdata/keuringsbewijs/keuringsbewijs-cover.jpg",
+        "visible": true
+    },
+    {
+        "id": "banksync",
+        "sequence": 3,
+        "postTitle": "Keeping track of your expenses",
+        "createdDate": "2024-05-20",
+        "shortNl": "Al je uitgaven bijhouden kan soms een hele klus zijn. Dit project helpt daarbij door je banktransacties automatisch te synchroniseren en categoriseren.",
+        "shortEn": "Keeping track of all your expenses can sometimes be quite a task. This project helps by automatically synchronizing and categorizing your bank transactions.",
+        "tags": "AI;PowerBi;3rd party integrations",
+        "thumbnail": "https://cdn3.pixelcut.app/pixa_cms/media/d428bc13-9a25-424b-a537-2c9e74b61897_hero_image_992d343c.webp",
+        "visible": true
+    },
+    {
         "id": "auragenie",
-        "postTitle": "Post over Auragenie",
-        "createdDate": "2023-06-15",
-        "shortNl": "This is a short description of the post",
-        "shortEn": "This is a short description of the post",
+        "sequence": 4,
+        "postTitle": "A genie amongst us",
+        "createdDate": "2025-03-13",
+        "shortNl": "Experimenteren met de OpenAI API om een real-time AI chatapplicatie te bouwen om eens te lachen met collega's.",
+        "shortEn": "Experimenting with the OpenAI API to build a real-time AI chat application for some fun with colleagues.",
         "tags": "OpenAI;Azure",
-        "thumbnail": "https://picsum.photos/id/30/800/600",
-        "visible": false
+        "thumbnail": "blogdata/auragenie/genie.webp",
+        "visible": true
     },
     {
         "id": "oefs",
+        "sequence": 1,
         "postTitle": "Post over OEFS",
-        "createdDate": "2023-06-15",
+        "createdDate": "2023-06-12",
         "shortNl": "This is a short description of the post",
         "shortEn": "This is a short description of the post",
         "tags": "OpenAI;Azure",
@@ -31,6 +56,7 @@
     },
     {
         "id": "benefits",
+        "sequence": 1,
         "postTitle": "Custom benefits platform",
         "createdDate": "2023-06-15",
         "shortNl": "This is a short description of the post",
@@ -41,6 +67,7 @@
     },
     {
         "id": "stagebegeleiding",
+        "sequence": 1,
         "postTitle": "Internship lead",
         "createdDate": "2023-06-15",
         "shortNl": "This is a short description of the post",
@@ -48,25 +75,5 @@
         "tags": "Elastic;Kibana;Logstash",
         "thumbnail": "https://picsum.photos/id/33/800/600",
         "visible": false
-    },
-    {
-        "id": "keuringsbewijs",
-        "postTitle": "Customer portal for belgian vehicle inspections",
-        "createdDate": "2025-01-10",
-        "shortNl": "This is the post",
-        "shortEn": "This is the post",
-        "tags": "External partners;UI/UX;Peppol",
-        "thumbnail": "blogdata/keuringsbewijs/keuringsbewijs-cover.jpg",
-        "visible": true
-    },
-    {
-        "id": "banksync",
-        "postTitle": "Keeping track of your expenses",
-        "createdDate": "2024-05-20",
-        "shortNl": "Al je uitgaven bijhouden kan soms een hele klus zijn. Dit project helpt daarbij door je banktransacties automatisch te synchroniseren en categoriseren.",
-        "shortEn": "Keeping track of all your expenses can sometimes be quite a task. This project helps by automatically synchronizing and categorizing your bank transactions.",
-        "tags": "AI;PowerBi;3rd party integrations",
-        "thumbnail": "https://cdn3.pixelcut.app/pixa_cms/media/d428bc13-9a25-424b-a537-2c9e74b61897_hero_image_992d343c.webp",
-        "visible": true
     }
 ]

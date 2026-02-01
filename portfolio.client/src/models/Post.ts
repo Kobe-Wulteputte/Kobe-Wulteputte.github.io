@@ -1,5 +1,6 @@
 export default interface Post {
   id: string
+  sequence: number
   postTitle: string
   createdDate: Date
   shortNl: string

@@ -43,8 +43,10 @@ export const useBlogStore = defineStore('blog', () => {
 
   const allPosts = computed(() =>
     Array.from(posts.value.values())
-      .filter(post => post.visible)
-      .sort((a, b) => b.createdDate.getTime() - a.createdDate.getTime())
+      .filter((post) => post.visible)
+      .sort((a, b) => {
+        return a.sequence - b.sequence
+      })
   )
 
   async function preloadAllPosts() {
@@ -61,6 +63,7 @@ export const useBlogStore = defineStore('blog', () => {
       const loadPromises = metadata.map(async (meta) => {
         const blogPost: BlogPost = {
           id: meta.id,
+          sequence: meta.sequence,
           postTitle: meta.postTitle,
           createdDate: new Date(meta.createdDate),
           shortNl: meta.shortNl,
