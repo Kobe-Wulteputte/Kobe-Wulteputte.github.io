@@ -1,13 +1,13 @@
 [
     {
         "id": "eos",
-        "postTitle": "Post over EOS",
+        "postTitle": "Custom ERP for terminal operator",
         "createdDate": "2023-06-15",
-        "shortNl": "This is a short description of the post",
-        "shortEn": "This is a short description of the post",
-        "tags": "Aurelia;.net",
-        "thumbnail": "https://picsum.photos/id/30/800/600",
-        "visible": false
+        "shortNl": "Ontwikkeling van een maatwerk ERP voor de Antwerpse haven, met focus op integraties, fullstack development en efficiënte bedrijfsprocessen.",
+        "shortEn": "Developing a custom ERP for the Port of Antwerp, focusing on integrations, fullstack development, and efficient business processes.",
+        "tags": ".NET;Aurelia;SQL Server",
+        "thumbnail": "blogdata/eos/terminal.jpg",
+        "visible": true
     },
     {
         "id": "auragenie",
