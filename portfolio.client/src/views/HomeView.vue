@@ -14,15 +14,15 @@
             <h1 class="hero-title">Kobe Wulteputte</h1>
             <p class="hero-description">{{ $t('home.intro') }}</p>
             <div class="social-links">
-              <a href="https://github.com/Kobe-Wulteputte" target="_blank" class="social-link" aria-label="Github"
+              <a href="https://github.com/Kobe-Wulteputte" data-umami-event="Github link" target="_blank" class="social-link" aria-label="Github"
                 title="Github">
                 <FontAwesomeIcon :icon="['fab', 'github']" />
               </a>
-              <a href="https://www.linkedin.com/in/kobe-w/" target="_blank" class="social-link" aria-label="LinkedIn"
+              <a href="https://www.linkedin.com/in/kobe-w/" data-umami-event="LinkedIn link" target="_blank" class="social-link" aria-label="LinkedIn"
                 title="LinkedIn">
                 <FontAwesomeIcon :icon="['fab', 'linkedin']" />
               </a>
-              <a href="https://www.strava.com/athletes/18349314" target="_blank" class="social-link" aria-label="Strava"
+              <a href="https://www.strava.com/athletes/18349314" data-umami-event="Strava link" target="_blank" class="social-link" aria-label="Strava"
                 title="Strava">
                 <FontAwesomeIcon :icon="['fab', 'strava']" />
               </a>
