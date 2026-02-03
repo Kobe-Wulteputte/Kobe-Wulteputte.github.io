@@ -5,15 +5,18 @@ import { useTranslation } from "i18next-vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useLanguageStore } from "@/stores/LanguageStore";
 
+
 const tr = useTranslation();
 const router = useRouter();
 const currentRoute = useRoute();
 const isMenuOpen = ref(false);
 const langStore = useLanguageStore();
+const umami = (window as any).umami;
 
 const routes = router.getRoutes().filter((e) => e.meta.nav);
 
 function changeLanguage(lang: string) {
+  umami.track("Language change", { language: lang });
   langStore.setLanguage(lang);
 }
 </script>
@@ -24,39 +27,23 @@ function changeLanguage(lang: string) {
       <a class="navbar-brand" href="#">
         <img src="@/assets/images/wordart.png" alt="Logo" />
       </a>
-      <button 
-        class="navbar-toggler" 
-        type="button" 
-        @click="isMenuOpen = !isMenuOpen"
-        aria-controls="navMenu" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" @click="isMenuOpen = !isMenuOpen" aria-controls="navMenu"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-nav" :class="{ active: isMenuOpen }">
-        <router-link 
-          v-for="route of routes" 
-          :key="route.path"
-          :to="route.path" 
-          class="nav-link"
-          :class="{ active: currentRoute.name == route.name }"
-          @click="isMenuOpen = false">
+        <router-link v-for="route of routes" :key="route.path" :to="route.path" class="nav-link"
+          :class="{ active: currentRoute.name == route.name }" @click="isMenuOpen = false">
           {{ $t(`navigation.${String(route.name)}`) }}
         </router-link>
         <div class="navbar-spacer"></div>
         <div class="language-selector">
-          <button 
-            class="lang-btn" 
-            @click="changeLanguage('en')" 
-            :class="{ active: $i18next.language === 'en' }">
+          <button class="lang-btn" @click="changeLanguage('en')" :class="{ active: $i18next.language === 'en' }">
             EN
           </button>
-          <button 
-            class="lang-btn" 
-            @click="changeLanguage('nl')" 
-            :class="{ active: $i18next.language === 'nl' }">
+          <button class="lang-btn" @click="changeLanguage('nl')" :class="{ active: $i18next.language === 'nl' }">
             NL
           </button>
         </div>
