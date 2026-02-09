@@ -33,8 +33,19 @@
         "visible": true
     },
     {
-        "id": "auragenie",
+        "id": "benefits",
         "sequence": 4,
+        "postTitle": "Custom benefits platform",
+        "createdDate": "2023-06-21",
+        "shortNl": "Deze case beschrijft de migratie van een legacy overheidsapplicatie voor voordelen van een self hosted IdentityServer naar Azure AD B2C. De nadruk ligt op een veilige overgang zonder downtime, met minimale impact voor duizenden gebruikers.",
+        "shortEn": "This case describes the migration of a legacy government benefits platform from a self hosted IdentityServer to Azure AD B2C. The focus is on executing a secure, zero downtime transition while keeping the experience seamless for thousands of users.",
+        "tags": "MVC;sharepoint;Identity provider",
+        "thumbnail": "blogdata/benefits/wout.jpg",
+        "visible": true
+    },
+    {
+        "id": "auragenie",
+        "sequence": 5,
         "postTitle": "A genie amongst us",
         "createdDate": "2025-03-13",
         "shortNl": "Experimenteren met de OpenAI API om een real-time AI chatapplicatie te bouwen om eens te lachen met collega's.",
@@ -52,17 +63,6 @@
         "shortEn": "This is a short description of the post",
         "tags": "OpenAI;Azure",
         "thumbnail": "https://picsum.photos/id/30/800/600",
-        "visible": false
-    },
-    {
-        "id": "benefits",
-        "sequence": 1,
-        "postTitle": "Custom benefits platform",
-        "createdDate": "2023-06-15",
-        "shortNl": "This is a short description of the post",
-        "shortEn": "This is a short description of the post",
-        "tags": "MVC;sharepoint;Identity provider",
-        "thumbnail": "https://picsum.photos/id/32/800/600",
         "visible": false
     },
     {
