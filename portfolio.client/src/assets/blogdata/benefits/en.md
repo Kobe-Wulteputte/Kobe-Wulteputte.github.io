@@ -36,6 +36,6 @@ My role involved analyzing the problem, planning the solution, and seeing it thr
 
 ---
 
-**Context:** Professional flexstaffing for Orbid
+**Context:** Flexstaffing for Orbid
 
 **Tech stack:** MVC Asp.net, React, Azure AD B2C, IdentityServer, Azure hosting

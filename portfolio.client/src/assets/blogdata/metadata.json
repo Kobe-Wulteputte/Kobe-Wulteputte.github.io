@@ -37,9 +37,9 @@
         "sequence": 4,
         "postTitle": "Custom benefits platform",
         "createdDate": "2023-06-21",
-        "shortNl": "Deze case beschrijft de migratie van een legacy overheidsapplicatie voor voordelen van een self hosted IdentityServer naar Azure AD B2C. De nadruk ligt op een veilige overgang zonder downtime, met minimale impact voor duizenden gebruikers.",
-        "shortEn": "This case describes the migration of a legacy government benefits platform from a self hosted IdentityServer to Azure AD B2C. The focus is on executing a secure, zero downtime transition while keeping the experience seamless for thousands of users.",
-        "tags": "MVC;sharepoint;Identity provider",
+        "shortNl": "Deze case beschrijft de migratie van een self hosted IdentityServer naar Azure AD B2C. De nadruk ligt op een veilige overgang zonder downtime, met minimale impact voor duizenden gebruikers.",
+        "shortEn": "This case describes the migration from a self hosted IdentityServer to Azure AD B2C. The focus is on executing a secure, zero downtime transition while keeping the experience seamless for thousands of users.",
+        "tags": "MVC;Azure;Identity provider",
         "thumbnail": "blogdata/benefits/wout.jpg",
         "visible": true
     },
