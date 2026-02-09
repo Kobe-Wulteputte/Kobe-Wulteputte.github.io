@@ -1,38 +1,44 @@
-# Migratie van een Legacy Overheidsplatform naar Azure AD B2C
+# Migration of a Legacy Authentication System to Azure AD B2C
 
-## De uitdaging
+## The Challenge
 
-Ik kwam bij een project om een overheidsplatform voor arbeidsvoorwaarden te moderniseren dat duizenden actieve en gepensioneerde medewerkers bedient. De applicatie was een MVC-app met enkele React-componenten, draaiend op een legacy IdentityServer voor authenticatie. Onze opdracht was om te migreren naar Azure AD B2C en de authenticatie naar de cloud te verplaatsen.
+This project focused on a benefits platform for a government organization used by thousands of active and retired employees. The application consisted of an ASP.NET MVC web application with integrated React components and relied on a legacy IdentityServer for authentication. The objective was to migrate this authentication mechanism to Azure AD B2C and move authentication management to the cloud.
 
-De belangrijkste uitdaging was werken met beperkte documentatie over het bestaande systeem. We moesten begrijpen hoe alles werkte, de migratie plannen en uitvoeren zonder downtime te veroorzaken of gebruikers te dwingen hun wachtwoord opnieuw in te stellen. Omdat de gebruikersbasis zowel actieve medewerkers als gepensioneerden omvat, wilden we het zo eenvoudig mogelijk houden voor iedereen.
+A key challenge was the lack of comprehensive documentation for the existing system. It was necessary to thoroughly analyze the current behavior, define a migration strategy, and implement it without causing downtime or forcing users to reset their passwords. Given the diverse user base, including both active employees and retirees, ease of use was a critical requirement.
 
-## Technische aanpak
+## Technical Approach
 
-Na het analyseren van het bestaande systeem, realiseerde ik me dat we een voordeel hadden: toegang tot de gehashte wachtwoorden van de legacy IdentityServer. Dit betekende dat we gebruikers konden migreren zonder dat ze hun wachtwoord opnieuw moesten instellen.
+After analyzing the existing architecture, it became clear that we had access to the hashed passwords stored in the legacy IdentityServer. This enabled us to migrate users without requiring them to change their passwords.
 
-De oplossing was om Azure AD B2C op te zetten met custom policies die authenticatie tegen beide systemen konden afhandelen tijdens de transitie. Wanneer een gebruiker inlogde, zou het systeem eerst Azure AD B2C controleren. Als ze nog niet gemigreerd waren, valideerden we hun inloggegevens tegen de oude IdentityServer, en bij succes werd hun wachtwoord automatisch opgeslagen in Azure AD B2C. De gebruiker logde gewoon normaal in en werd gemigreerd zonder te weten dat er iets veranderd was.
+Azure AD B2C was configured using custom policies that supported authentication against both systems during the transition period. When a user attempted to log in, Azure AD B2C was queried first. If the user was not yet present, their credentials were validated against the legacy IdentityServer. Upon successful authentication, the password was automatically stored in Azure AD B2C, completing the migration. From the end user perspective, this process was entirely transparent.
 
-Deze aanpak vermeed de rompslomp van het coördineren van wachtwoordresets met duizenden gebruikers en betekende dat we mensen geleidelijk konden migreren naarmate ze natuurlijk inlogden.
+This approach removed the need to coordinate large scale password resets and allowed for a gradual migration based on natural user login behavior.
 
-## Architectuurbeslissingen
+## Architectural Decisions
 
-Ik koos ervoor om Azure AD B2C custom policies te gebruiken in plaats van de standaard user flows omdat we die extra flexibiliteit nodig hadden voor de hybride authenticatielogica. Custom policies hebben een steilere leercurve, maar gaven ons de controle om de transitie soepel af te handelen.
+A deliberate decision was made to use Azure AD B2C custom policies instead of standard user flows. This provided the flexibility required to implement hybrid authentication logic. While custom policies have a steeper learning curve, they offered the level of control needed to manage the migration in a secure and predictable way.
 
-In plaats van een bulk migratie in één keer, ontwierpen we het om geleidelijk te gebeuren terwijl gebruikers inlogden. Dit was minder risicovol en liet ons monitoren hoe het ging in productie. Als we edge cases tegenkwamen, konden we die aanpakken zonder iedereen te beïnvloeden.
+Rather than performing a one time bulk migration, we opted for a phased approach where users were migrated automatically as they logged in. This significantly reduced risk and allowed us to monitor the process in production and address edge cases as they arose.
 
-Tijdens de transitie onderhielden we een verbinding tussen Azure AD B2C en de IdentityServer, met passende beveiligingsmaatregelen en fallback-opties om de betrouwbaarheid te waarborgen.
+During the transition phase, a secure connection between Azure AD B2C and the legacy IdentityServer was maintained, including appropriate fallback mechanisms to ensure reliability and continuity of authentication.
 
-## Resultaten en impact
+## Results and Impact
 
-De migratie verliep soepel. Er was geen downtime en zeer weinig supporttickets. Gebruikers werden naar het nieuwe systeem gemigreerd zonder wachtwoordresets nodig te hebben, wat het hoofddoel was.
+The migration was completed successfully with no downtime and a minimal number of support requests. Users were seamlessly transitioned to the new system without password resets, which was a key success factor.
 
-Naast het voltooien van de migratie, zette de overstap naar Azure AD B2C de applicatie klaar voor toekomstige verbeteringen. Het platform heeft ingebouwde ondersteuning voor multi-factor authenticatie, conditional access en integratie met andere cloudservices, wat veel moeilijker zou zijn geweest om toe te voegen aan de oude setup.
+In addition to completing the migration, the move to Azure AD B2C prepared the application for future enhancements. The platform provides built in support for multi factor authentication, conditional access, and integration with other cloud services, capabilities that would have been difficult to implement in the legacy setup.
 
-## Belangrijkste leerpunten
+## Key Learnings
 
-Dit project leerde me een paar dingen over werken met legacy systemen. Ten eerste, zelfs als documentatie schaars is, loont het de moeite om echt de tijd te nemen om de bestaande setup te begrijpen. Ten tweede, soms kun je gebruiken wat er al is (zoals die gehashte wachtwoorden) om problemen op te lossen op manieren die beter zijn voor gebruikers. Ten derde, het kiezen van de juiste tools en aanpak vooraf, zelfs als ze initieel complexer zijn, maakt de uitvoering meestal soepeler.
+This project highlighted the importance of thoroughly understanding legacy systems, especially when documentation is limited. It also demonstrated how existing technical assets, such as access to hashed passwords, can be leveraged to design user friendly migration strategies. Finally, it reinforced that making well considered architectural choices early on, even when they appear more complex initially, leads to a smoother and more robust execution.
 
-Mijn rol omvatte het analyseren van het probleem, het plannen van de oplossing en het tot een goed einde brengen. Het was goede ervaring in het balanceren van technische vereisten met gebruikersbehoeften, vooral bij het bedienen van een diverse gebruikersbasis.
+My role included analyzing the existing system, designing the migration strategy, and delivering the implementation through to completion. The project provided valuable experience in balancing technical constraints with user experience considerations within a large and diverse user base.
+
+---
+
+**Context:** Flexstaffing for Orbid
+
+**Tech stack:** ASP.NET MVC, React, Azure AD B2C, IdentityServer, Azure hosting
 
 ---
 
