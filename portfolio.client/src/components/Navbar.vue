@@ -16,7 +16,10 @@ const umami = (window as any).umami;
 const routes = router.getRoutes().filter((e) => e.meta.nav);
 
 function changeLanguage(lang: string) {
-  umami.track("Language change", { language: lang });
+  try {
+    umami.track("Language change", { language: lang });
+  } catch (error) {
+  }
   langStore.setLanguage(lang);
 }
 </script>
